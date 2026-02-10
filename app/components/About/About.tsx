@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeIn from "../FadeIn/FadeIn";
 
 type AboutDict = {
@@ -26,10 +27,12 @@ export default function About({ dict }: Props) {
         {/* Image */}
         <FadeIn direction="left">
           <div className="relative aspect-[3/2] md:aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden">
-            <img
+            <Image
               src="/img/about.png"
               alt="Koya's Café Bar Bistrô sign"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </FadeIn>

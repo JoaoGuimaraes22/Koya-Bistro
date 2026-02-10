@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getDictionary } from "../../get-dictionary";
 import type { Locale } from "../../i18n-config";
 import Navbar from "../components/Navbar/Navbar";
@@ -21,9 +22,13 @@ export default async function Home({ params }: Props) {
 
       {/* Hero Section */}
       <section className="relative flex min-h-screen flex-col items-center justify-center text-white text-center px-5 sm:px-6 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/img/hero.png')" }}
+        <Image
+          src="/img/hero.png"
+          alt="Koya's — fresh lemonade on the terrace"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/60" />
         <HeroContent dict={dict.hero} locale={locale} />
