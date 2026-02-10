@@ -7,8 +7,9 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "The Golden Fork | Fine Dining",
-  description: "A modern dining experience with locally sourced ingredients.",
+  title: "Koya's | Café Bar Bistrô | Carcavelos",
+  description:
+    "Comida caseira, pizzas no forno a lenha, cervejas artesanais e cocktails. Mercado de Carcavelos.",
 };
 
 type Props = {

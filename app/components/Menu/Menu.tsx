@@ -69,7 +69,7 @@ export default function Menu({ dict }: Props) {
                 <p className="text-sm text-zinc-500 mt-1">{item.description}</p>
               </div>
               <p className="text-lg font-bold font-serif text-amber-600 shrink-0">
-                ${item.price}
+                €{item.price}
               </p>
             </div>
           ))}

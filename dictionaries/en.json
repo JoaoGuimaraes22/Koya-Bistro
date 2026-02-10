@@ -7,148 +7,450 @@
     "reserve": "Reserve"
   },
   "hero": {
-    "established": "Est. 2025",
-    "title": "The Golden Fork",
-    "subtitle": "A modern dining experience with locally sourced ingredients and bold flavors.",
+    "established": "Café | Bar | Bistrô",
+    "title": "Koya's",
+    "subtitle": "Homemade food, tapas, toasts and delicious desserts — all prepared with care. A relaxed, family atmosphere where everyone is welcome.",
     "viewMenu": "View Menu",
-    "reserveTable": "Reserve a Table"
+    "reserveTable": "Visit Us"
   },
   "about": {
     "label": "Our Story",
-    "title": "A Passion for Flavor",
+    "title": "Made With Love, Every Day",
     "imagePlaceholder": "Restaurant photo here",
-    "paragraph1": "Founded in 2025, The Golden Fork was born from a simple belief: that great food starts with great ingredients. Every dish on our menu is crafted from locally sourced, seasonal produce — working directly with farmers and suppliers who share our commitment to quality.",
-    "paragraph2": "Our chef brings over 15 years of culinary experience from kitchens across Europe and Asia, blending classic techniques with bold, modern flavors. The result is a menu that feels both familiar and exciting.",
-    "paragraph3": "Whether you're joining us for a casual weeknight dinner or a special celebration, we want every visit to feel personal. Good food, warm service, and an atmosphere that makes you want to stay a little longer — that's what we're all about.",
-    "stat1Value": "15+",
-    "stat1Label": "Years Experience",
-    "stat2Value": "50+",
-    "stat2Label": "Menu Items",
-    "stat3Value": "12",
-    "stat3Label": "Local Suppliers"
+    "paragraph1": "Koya's is your go-to spot in Carcavelos — a café, bar, and bistro all in one, right in the heart of Mercado de Carcavelos, next to Santini. Whether you're stopping by for your morning coffee, a long lunch, or drinks with friends after a day at the beach, we've got you covered.",
+    "paragraph2": "We're known for our wood-fired pizzas (excellent even by Napolitano standards, our regulars say), our wraps, bruschetta, and homemade soups. Everything is made fresh, with care, and with flavors that feel like home.",
+    "paragraph3": "With 6–8 craft beers on tap, signature cocktails made with Sharish gin, and a relaxed outdoor terrace, Koya's is the kind of place where you come for a quick bite and end up staying all evening. Open every day from 9 AM to midnight.",
+    "stat1Value": "4.8",
+    "stat1Label": "Uber Eats Rating",
+    "stat2Value": "4.6",
+    "stat2Label": "Google Rating",
+    "stat3Value": "280+",
+    "stat3Label": "Reviews"
   },
   "menu": {
     "label": "What We Serve",
     "title": "Our Menu",
     "categories": {
-      "starters": "Starters",
-      "mains": "Mains",
-      "desserts": "Desserts",
-      "drinks": "Drinks"
+      "petiscos": "Tapas",
+      "pizzas": "Pizzas",
+      "saladas": "Salads & Wraps",
+      "tostas": "Toasts & Sandwiches",
+      "sobremesas": "Desserts",
+      "bebidas": "Drinks & Cocktails"
     },
     "items": {
-      "starters": [
+      "petiscos": [
         {
-          "name": "Truffle Burrata",
-          "description": "Creamy burrata with black truffle, heirloom tomatoes, and aged balsamic.",
-          "price": "16"
+          "name": "Soup of the Day",
+          "description": "Homemade daily soup.",
+          "price": "2.60"
         },
         {
-          "name": "Crispy Calamari",
-          "description": "Lightly fried with lemon aioli and pickled peppers.",
-          "price": "14"
+          "name": "Sopa da Pedra",
+          "description": "Traditional Portuguese stone soup (Thursdays).",
+          "price": "3.80"
         },
         {
-          "name": "Roasted Beet Salad",
-          "description": "Golden and red beets, goat cheese, candied walnuts, citrus vinaigrette.",
-          "price": "13"
+          "name": "Gratinated Mushrooms",
+          "description": "Oven-baked mushrooms with melted cheese.",
+          "price": "5.50"
         },
         {
-          "name": "French Onion Soup",
-          "description": "Slow-cooked onions, rich beef broth, gruyère crouton.",
-          "price": "12"
+          "name": "Bruschetta with Presunto",
+          "description": "Toasted bread topped with cured ham.",
+          "price": "5.50"
+        },
+        {
+          "name": "Tortilhas",
+          "description": "Choice of chouriço, mushrooms, or ham.",
+          "price": "9.50"
+        },
+        {
+          "name": "Salt Cod Tostadas",
+          "description": "With pepper, onion, garlic, and fresh herbs.",
+          "price": "10.50"
+        },
+        {
+          "name": "Stewed Gizzards",
+          "description": "Traditional Portuguese moelas guisadas.",
+          "price": "9.00"
+        },
+        {
+          "name": "Veal Stew",
+          "description": "Slow-cooked veal with carrot.",
+          "price": "11.00"
+        },
+        {
+          "name": "Meia Desfeita de Bacalhau",
+          "description": "Salt cod with chickpeas, onion, and egg.",
+          "price": "11.50"
+        },
+        {
+          "name": "Carpaccio",
+          "description": "Choice of beef or salmon.",
+          "price": "11.00"
+        },
+        {
+          "name": "Shrimp Curry",
+          "description": "Fragrant shrimp curry.",
+          "price": "12.50"
+        },
+        {
+          "name": "Bacalhau à Brás",
+          "description": "Classic shredded cod with eggs and potatoes.",
+          "price": "11.00"
+        },
+        {
+          "name": "Fish Ceviche",
+          "description": "Catch of the day marinated in lemon, lime, and ginger.",
+          "price": "13.90"
+        },
+        {
+          "name": "Garlic Shrimp",
+          "description": "Camarão à guilho — sizzling garlic shrimp.",
+          "price": "12.50"
+        },
+        {
+          "name": "Pica Pau",
+          "description": "Sautéed beef strips with pickles and mustard.",
+          "price": "12.50"
+        },
+        {
+          "name": "Clams Bolhão Pato",
+          "description": "Clams in garlic, olive oil, coriander, and lemon.",
+          "price": "13.50"
         }
       ],
-      "mains": [
+      "pizzas": [
         {
-          "name": "Pan-Seared Salmon",
-          "description": "Atlantic salmon, crushed potatoes, asparagus, dill beurre blanc.",
-          "price": "32"
+          "name": "Garlic Bread",
+          "description": "With mozzarella and oregano.",
+          "price": "6.30"
         },
         {
-          "name": "Braised Short Rib",
-          "description": "12-hour braised beef, creamy polenta, roasted root vegetables.",
-          "price": "36"
+          "name": "Garlic Bread Pepperoni",
+          "description": "With mozzarella, pepperoni, and oregano.",
+          "price": "6.80"
         },
         {
-          "name": "Wild Mushroom Risotto",
-          "description": "Arborio rice, porcini and chanterelle mushrooms, parmesan, truffle oil.",
-          "price": "26"
+          "name": "Khachapury",
+          "description": "Garlic bread with mozzarella, egg, and oregano.",
+          "price": "6.50"
         },
         {
-          "name": "Grilled Lamb Chops",
-          "description": "Herb-crusted New Zealand lamb, mint chimichurri, roasted garlic mash.",
-          "price": "38"
+          "name": "Pizza Margarita",
+          "description": "Tomato sauce, mozzarella, oregano, and basil.",
+          "price": "11.50"
+        },
+        {
+          "name": "Pizza Marinara",
+          "description": "Tomato sauce, extra virgin olive oil, oregano, and garlic.",
+          "price": "10.50"
+        },
+        {
+          "name": "Pizza Sol",
+          "description": "Tomato sauce, mozzarella, ham, and oregano.",
+          "price": "12.50"
+        },
+        {
+          "name": "Pizza Maré",
+          "description": "Tomato sauce, mozzarella, bacon, and oregano.",
+          "price": "12.50"
+        },
+        {
+          "name": "Pizza Surf",
+          "description": "Tomato sauce, mozzarella, pepperoni, mushrooms, and oregano.",
+          "price": "13.10"
+        },
+        {
+          "name": "Pizza Koya's",
+          "description": "Tomato sauce, mozzarella, chouriço, onion, olives, and oregano.",
+          "price": "12.90"
+        },
+        {
+          "name": "Pizza Mercado",
+          "description": "Tomato sauce, mozzarella, mushrooms, pepper, olives, cherry tomato, arugula, and oregano.",
+          "price": "13.50"
+        },
+        {
+          "name": "Pizza Carcavelos",
+          "description": "Tomato sauce, mozzarella, presunto, arugula, cherry tomato, parmesan, and oregano.",
+          "price": "13.50"
+        },
+        {
+          "name": "Pizza Praia",
+          "description": "Four cheeses: mozzarella, parmesan, gorgonzola, provolone, and oregano.",
+          "price": "13.50"
+        },
+        {
+          "name": "Pizza Tubo Calzone",
+          "description": "Tomato sauce, mozzarella, ham, mushrooms, arugula, and egg.",
+          "price": "14.50"
+        },
+        {
+          "name": "Pizza Vegan",
+          "description": "Tomato sauce, vegan cheese, diced dharma, mushrooms, onion, olives, and arugula.",
+          "price": "14.90"
+        },
+        {
+          "name": "Extra Ingredient",
+          "description": "Tuna, pineapple, anchovies, beetroot...",
+          "price": "1.00"
         }
       ],
-      "desserts": [
+      "saladas": [
         {
-          "name": "Crème Brûlée",
-          "description": "Classic vanilla bean custard with a caramelized sugar crust.",
-          "price": "12"
+          "name": "Chicken Salad",
+          "description": "Lettuce, shredded chicken, sweet corn, tomato, onion, and grated carrot.",
+          "price": "8.80"
         },
         {
-          "name": "Chocolate Fondant",
-          "description": "Warm dark chocolate cake with a molten center, vanilla gelato.",
-          "price": "14"
+          "name": "Tuna Salad",
+          "description": "Lettuce, tuna, boiled egg, tomato, red onion, and olives.",
+          "price": "8.80"
         },
         {
-          "name": "Lemon Tart",
-          "description": "Tangy lemon curd, shortbread crust, torched meringue.",
-          "price": "11"
+          "name": "Caprese",
+          "description": "Tomato, burratina, basil, and arugula.",
+          "price": "8.20"
+        },
+        {
+          "name": "Greek Salad",
+          "description": "Tomato, cucumber, feta cheese, olives, onion, and capers.",
+          "price": "8.80"
+        },
+        {
+          "name": "Salada Koya's",
+          "description": "Build your own: 1 base, 2 proteins, and 3 ingredients.",
+          "price": "10.30"
+        },
+        {
+          "name": "Anchovy Wrap",
+          "description": "Anchovies, cream cheese, and arugula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Salmon Wrap",
+          "description": "Smoked salmon, cream cheese, and arugula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Tuna Wrap",
+          "description": "Tuna, mayo, sun-dried tomato in olive oil, and arugula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Chicken Wrap",
+          "description": "Shredded chicken, mayo, beetroot, carrot, and arugula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Vegan Wrap",
+          "description": "Mushrooms, sweet corn, vegan cream cheese, and arugula.",
+          "price": "8.50"
         }
       ],
-      "drinks": [
+      "tostas": [
         {
-          "name": "House Red Wine",
-          "description": "A rotating selection of bold, full-bodied reds.",
-          "price": "14"
+          "name": "Bread with Butter",
+          "description": "Simple toasted bread with butter.",
+          "price": "1.70"
         },
         {
-          "name": "Espresso Martini",
-          "description": "Vodka, fresh espresso, coffee liqueur, vanilla syrup.",
-          "price": "16"
+          "name": "Toast",
+          "description": "Classic Portuguese torrada.",
+          "price": "3.10"
         },
         {
-          "name": "Sparkling Water",
-          "description": "San Pellegrino, 750ml.",
-          "price": "6"
+          "name": "Cheese or Ham Sandwich",
+          "description": "Simple cheese or ham sandwich.",
+          "price": "2.90"
         },
         {
-          "name": "Seasonal Cocktail",
-          "description": "Ask your server about this month's signature creation.",
-          "price": "18"
+          "name": "Mista Sandwich",
+          "description": "Ham and cheese sandwich.",
+          "price": "3.70"
+        },
+        {
+          "name": "Presunto Sandwich",
+          "description": "Cured ham sandwich.",
+          "price": "3.90"
+        },
+        {
+          "name": "Chicken or Tuna Sandwich",
+          "description": "Grilled chicken or tuna sandwich.",
+          "price": "4.20"
+        },
+        {
+          "name": "Cheese or Ham Tosta",
+          "description": "Toasted cheese or ham on thick bread.",
+          "price": "4.50"
+        },
+        {
+          "name": "Mista Tosta",
+          "description": "Toasted ham and cheese.",
+          "price": "5.20"
+        },
+        {
+          "name": "Presunto Tosta with Arugula",
+          "description": "Toasted cured ham with fresh arugula.",
+          "price": "6.20"
+        },
+        {
+          "name": "Chicken or Tuna Tosta",
+          "description": "Toasted chicken or tuna on thick bread.",
+          "price": "6.50"
+        }
+      ],
+      "sobremesas": [
+        {
+          "name": "Brownie",
+          "description": "Rich chocolate brownie.",
+          "price": "3.90"
+        },
+        {
+          "name": "Cheesecake",
+          "description": "Classic creamy cheesecake.",
+          "price": "3.90"
+        },
+        {
+          "name": "Panna Cotta",
+          "description": "Silky Italian panna cotta.",
+          "price": "3.90"
+        },
+        {
+          "name": "Chocolate Mousse",
+          "description": "Homemade chocolate mousse.",
+          "price": "3.40"
+        },
+        {
+          "name": "Fruit Salad",
+          "description": "Fresh seasonal fruit salad.",
+          "price": "3.40"
+        }
+      ],
+      "bebidas": [
+        { "name": "Coffee", "description": "Espresso.", "price": "0.90" },
+        {
+          "name": "Cappuccino",
+          "description": "Classic cappuccino.",
+          "price": "2.50"
+        },
+        {
+          "name": "Galão",
+          "description": "Portuguese-style latte.",
+          "price": "1.70"
+        },
+        {
+          "name": "Draft Beer (20cl)",
+          "description": "Imperial — fresh draft beer.",
+          "price": "1.20"
+        },
+        {
+          "name": "Draft Beer (50cl)",
+          "description": "Large imperial.",
+          "price": "3.00"
+        },
+        {
+          "name": "Bucket of Minis",
+          "description": "9 or 15 units.",
+          "price": "9.90"
+        },
+        {
+          "name": "Wine (Glass)",
+          "description": "House wine by the glass.",
+          "price": "3.90"
+        },
+        {
+          "name": "Wine Reserva (Glass)",
+          "description": "Reserva wine by the glass.",
+          "price": "5.00"
+        },
+        {
+          "name": "Natural Juice",
+          "description": "Orange juice or lemonade.",
+          "price": "3.50"
+        },
+        {
+          "name": "Spritz",
+          "description": "Aperol, sparkling wine, and soda water.",
+          "price": "6.00"
+        },
+        {
+          "name": "Gin & Tonic",
+          "description": "Classic G&T.",
+          "price": "7.00"
+        },
+        {
+          "name": "Gin Hendricks",
+          "description": "Premium gin and tonic.",
+          "price": "9.00"
+        },
+        {
+          "name": "Caipirinha",
+          "description": "Classic Brazilian caipirinha.",
+          "price": "8.00"
+        },
+        {
+          "name": "Mojito",
+          "description": "Fresh mint mojito.",
+          "price": "8.00"
+        },
+        {
+          "name": "Moscow Mule",
+          "description": "Vodka, ginger beer, and lime.",
+          "price": "8.00"
+        },
+        {
+          "name": "Sangria (Glass)",
+          "description": "White or red. Also: red berries or passion fruit.",
+          "price": "6.00"
+        },
+        {
+          "name": "Sangria Jug",
+          "description": "White or red (jug). Red berries/passion fruit also available.",
+          "price": "20.00"
+        },
+        {
+          "name": "Wine (Bottle)",
+          "description": "House wine.",
+          "price": "13.00"
+        },
+        {
+          "name": "Wine Reserva (Bottle)",
+          "description": "Reserva wine.",
+          "price": "19.00"
         }
       ]
     }
   },
   "contact": {
-    "label": "Get In Touch",
-    "title": "Reserve a Table",
+    "label": "Come Visit Us",
+    "title": "Find Us",
     "hours": {
       "title": "Opening Hours",
       "weekdays": "Monday — Friday",
-      "weekdaysTime": "11:00 AM — 10:00 PM",
+      "weekdaysTime": "9:00 AM — Midnight",
       "saturday": "Saturday",
-      "saturdayTime": "10:00 AM — 11:00 PM",
+      "saturdayTime": "9:00 AM — Midnight",
       "sunday": "Sunday",
-      "sundayTime": "10:00 AM — 9:00 PM"
+      "sundayTime": "9:00 AM — Midnight"
     },
     "location": {
       "title": "Location",
-      "line1": "123 Main Street",
-      "line2": "Downtown, Your City, ST 10001"
+      "line1": "Mercado de Carcavelos",
+      "line2": "Praça Dr. Manuel Rebello de Andrade, 2775-684 Carcavelos"
     },
     "details": {
       "title": "Contact",
       "phoneLabel": "Phone:",
-      "phone": "(555) 123-4567",
-      "emailLabel": "Email:",
-      "email": "hello@thegoldenfork.com"
+      "phone": "962 075 610",
+      "emailLabel": "Instagram:",
+      "email": "@koyas_bistro"
     },
     "mapPlaceholder": "Embed Google Map here",
     "form": {
-      "title": "Make a Reservation",
+      "title": "Send Us a Message",
       "firstName": "First Name",
       "firstNamePlaceholder": "John",
       "lastName": "Last Name",
@@ -160,18 +462,25 @@
       "timePlaceholder": "Select time",
       "guests": "Number of Guests",
       "guestsPlaceholder": "Select guests",
-      "guestOptions": ["1 Guest", "2 Guests", "3 Guests", "4 Guests", "5 Guests", "6+ Guests"],
-      "specialRequests": "Special Requests",
-      "specialRequestsPlaceholder": "Allergies, celebrations, seating preferences...",
-      "submit": "Reserve Now",
+      "guestOptions": [
+        "1 Guest",
+        "2 Guests",
+        "3 Guests",
+        "4 Guests",
+        "5 Guests",
+        "6+ Guests"
+      ],
+      "specialRequests": "Message",
+      "specialRequestsPlaceholder": "Any questions, reservations, or special requests...",
+      "submit": "Send Message",
       "thankYouTitle": "Thank You!",
-      "thankYouMessage": "We'll confirm your reservation shortly."
+      "thankYouMessage": "We'll get back to you shortly."
     }
   },
   "footer": {
-    "description": "A modern dining experience with locally sourced ingredients and bold flavors. Join us for an unforgettable meal.",
+    "description": "Café, bar, and bistro in the heart of Mercado de Carcavelos. Homemade food, wood-fired pizzas, craft beers, and great cocktails. Open every day, 9 AM to midnight.",
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
-    "copyright": "The Golden Fork. All rights reserved."
+    "copyright": "Koya's Bistrô. All rights reserved."
   }
 }

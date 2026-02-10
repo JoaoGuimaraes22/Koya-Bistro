@@ -26,7 +26,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-bold text-white mb-4">
-              The Golden Fork
+              Koya&apos;s
             </h3>
             <p className="text-sm leading-relaxed">{dict.description}</p>
           </div>
@@ -79,7 +79,9 @@ export default function Footer({ dict, navDict, locale }: Props) {
             </h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/koyas_bistro"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
               >

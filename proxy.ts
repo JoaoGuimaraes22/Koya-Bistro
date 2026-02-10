@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { i18n } from "./i18n-config";
 
 function getLocale(request: NextRequest): string {
-  // Check Accept-Language header
   const acceptLanguage = request.headers.get("Accept-Language");
   if (acceptLanguage) {
     const preferred = acceptLanguage
@@ -19,17 +18,15 @@ function getLocale(request: NextRequest): string {
   return i18n.defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Check if the pathname already has a locale
   const pathnameHasLocale = i18n.locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
   if (pathnameHasLocale) return;
 
-  // Skip static files and API routes
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
@@ -38,7 +35,6 @@ export function middleware(request: NextRequest) {
     return;
   }
 
-  // Redirect to the detected locale
   const locale = getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);

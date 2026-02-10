@@ -54,7 +54,7 @@ export default function Navbar({ dict, locale }: Props) {
           href={`/${locale}`}
           className="font-serif text-2xl font-bold text-white"
         >
-          The Golden Fork
+          Koya&apos;s
         </a>
 
         {/* Desktop Links */}

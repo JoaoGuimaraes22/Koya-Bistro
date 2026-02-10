@@ -7,148 +7,450 @@
     "reserve": "Reservar"
   },
   "hero": {
-    "established": "Est. 2025",
-    "title": "The Golden Fork",
-    "subtitle": "Uma experiência gastronómica moderna com ingredientes locais e sabores marcantes.",
+    "established": "Café | Bar | Bistrô",
+    "title": "Koya's",
+    "subtitle": "Todos os dias com comida caseira, petiscos, tostas e deliciosas sobremesas, tudo preparado com muito carinho. Ambiente descontraído e familiar onde todos são bem-vindos.",
     "viewMenu": "Ver Menu",
-    "reserveTable": "Reservar Mesa"
+    "reserveTable": "Visite-nos"
   },
   "about": {
     "label": "A Nossa História",
-    "title": "Uma Paixão pelo Sabor",
+    "title": "Feito Com Amor, Todos os Dias",
     "imagePlaceholder": "Foto do restaurante aqui",
-    "paragraph1": "Fundado em 2025, o The Golden Fork nasceu de uma crença simples: a boa comida começa com bons ingredientes. Cada prato do nosso menu é preparado com produtos sazonais e de origem local — trabalhando diretamente com agricultores e fornecedores que partilham o nosso compromisso com a qualidade.",
-    "paragraph2": "O nosso chef traz mais de 15 anos de experiência culinária em cozinhas por toda a Europa e Ásia, combinando técnicas clássicas com sabores modernos e ousados. O resultado é um menu que é simultaneamente familiar e surpreendente.",
-    "paragraph3": "Quer nos visite para um jantar casual durante a semana ou para uma celebração especial, queremos que cada visita seja pessoal. Boa comida, serviço acolhedor e um ambiente que o faz querer ficar mais um pouco — é isso que nos define.",
-    "stat1Value": "15+",
-    "stat1Label": "Anos de Experiência",
-    "stat2Value": "50+",
-    "stat2Label": "Pratos no Menu",
-    "stat3Value": "12",
-    "stat3Label": "Fornecedores Locais"
+    "paragraph1": "O Koya's é o seu sítio favorito em Carcavelos — café, bar e bistrô tudo num só lugar, no coração do Mercado de Carcavelos, ao lado da Santini. Quer venha tomar o seu café de manhã, almoçar com calma, ou beber uns copos com amigos depois de um dia de praia, estamos cá para si.",
+    "paragraph2": "Somos conhecidos pelas nossas pizzas no forno a lenha (excelentes até pelos padrões napolitanos, dizem os nossos clientes regulares), os nossos wraps, bruschetas e sopas caseiras. Tudo feito na hora, com carinho e sabores que sabem a casa.",
+    "paragraph3": "Com 6–8 cervejas artesanais em barril, cocktails de assinatura com gin Sharish, e uma esplanada descontraída, o Koya's é o tipo de sítio onde vem para comer algo rápido e acaba por ficar a noite toda. Aberto todos os dias das 9h à meia-noite.",
+    "stat1Value": "4.8",
+    "stat1Label": "Avaliação Uber Eats",
+    "stat2Value": "4.6",
+    "stat2Label": "Avaliação Google",
+    "stat3Value": "280+",
+    "stat3Label": "Avaliações"
   },
   "menu": {
     "label": "O Que Servimos",
     "title": "O Nosso Menu",
     "categories": {
-      "starters": "Entradas",
-      "mains": "Pratos Principais",
-      "desserts": "Sobremesas",
-      "drinks": "Bebidas"
+      "petiscos": "Petiscos",
+      "pizzas": "Pizzas",
+      "saladas": "Saladas & Wraps",
+      "tostas": "Tostas & Sandes",
+      "sobremesas": "Sobremesas",
+      "bebidas": "Bebidas & Cocktails"
     },
     "items": {
-      "starters": [
+      "petiscos": [
         {
-          "name": "Burrata com Trufa",
-          "description": "Burrata cremosa com trufa negra, tomates tradicionais e balsâmico envelhecido.",
-          "price": "16"
+          "name": "Sopa",
+          "description": "Sopa caseira do dia.",
+          "price": "2.60"
         },
         {
-          "name": "Calamares Crocantes",
-          "description": "Levemente fritos com aioli de limão e pimentos em conserva.",
-          "price": "14"
+          "name": "Sopa da Pedra",
+          "description": "Sopa tradicional portuguesa (quintas-feiras).",
+          "price": "3.80"
         },
         {
-          "name": "Salada de Beterraba Assada",
-          "description": "Beterrabas douradas e vermelhas, queijo de cabra, nozes caramelizadas, vinagrete cítrico.",
-          "price": "13"
+          "name": "Cogumelos Gratinados",
+          "description": "Cogumelos gratinados no forno com queijo derretido.",
+          "price": "5.50"
         },
         {
-          "name": "Sopa de Cebola Francesa",
-          "description": "Cebolas cozinhadas lentamente, caldo rico de carne, crouton de gruyère.",
-          "price": "12"
+          "name": "Bruschetta c/ Presunto",
+          "description": "Pão torrado com presunto curado.",
+          "price": "5.50"
+        },
+        {
+          "name": "Tortilhas",
+          "description": "De chouriço, cogumelos ou fiambre.",
+          "price": "9.50"
+        },
+        {
+          "name": "Tostadas de Bacalhau",
+          "description": "Com pimento, cebola, alho e ervas frescas.",
+          "price": "10.50"
+        },
+        {
+          "name": "Moelas Guisadas",
+          "description": "Moelas guisadas tradicionais.",
+          "price": "9.00"
+        },
+        {
+          "name": "Estufadinho de Vitela",
+          "description": "Vitela estufada com cenoura.",
+          "price": "11.00"
+        },
+        {
+          "name": "Meia Desfeita de Bacalhau",
+          "description": "Com grão, cebola e ovo.",
+          "price": "11.50"
+        },
+        {
+          "name": "Carpaccio",
+          "description": "De novilho ou salmão.",
+          "price": "11.00"
+        },
+        {
+          "name": "Caril de Camarão",
+          "description": "Caril aromático de camarão.",
+          "price": "12.50"
+        },
+        {
+          "name": "Bacalhau à Brás",
+          "description": "Clássico bacalhau desfiado com ovos e batata palha.",
+          "price": "11.00"
+        },
+        {
+          "name": "Ceviche de Peixe do Dia",
+          "description": "Marinado em sumo natural de limão, lima e gengibre.",
+          "price": "13.90"
+        },
+        {
+          "name": "Camarão à Guilho",
+          "description": "Camarão salteado com azeite e alho.",
+          "price": "12.50"
+        },
+        {
+          "name": "Pica Pau",
+          "description": "Tiras de vazia salteadas com pickles e mostarda.",
+          "price": "12.50"
+        },
+        {
+          "name": "Amêijoa à Bolhão Pato",
+          "description": "Amêijoas com alho, azeite, coentros e limão.",
+          "price": "13.50"
         }
       ],
-      "mains": [
+      "pizzas": [
         {
-          "name": "Salmão Grelhado",
-          "description": "Salmão do Atlântico, batatas esmagadas, espargos, molho beurre blanc de endro.",
-          "price": "32"
+          "name": "Pão de Alho",
+          "description": "Com mozzarella e oregãos.",
+          "price": "6.30"
         },
         {
-          "name": "Costela Estufada",
-          "description": "Carne estufada durante 12 horas, polenta cremosa, legumes de raiz assados.",
-          "price": "36"
+          "name": "Pão de Alho Pepperoni",
+          "description": "Com mozzarella, pepperoni e oregãos.",
+          "price": "6.80"
         },
         {
-          "name": "Risotto de Cogumelos Selvagens",
-          "description": "Arroz arbório, cogumelos porcini e chanterelle, parmesão, óleo de trufa.",
-          "price": "26"
+          "name": "Khachapury",
+          "description": "Pão de alho com mozzarella, ovo e oregãos.",
+          "price": "6.50"
         },
         {
-          "name": "Costeletas de Borrego Grelhadas",
-          "description": "Borrego da Nova Zelândia com crosta de ervas, chimichurri de hortelã, puré de alho assado.",
-          "price": "38"
+          "name": "Pizza Margarita",
+          "description": "Molho tomate, mozzarella, oregãos e manjericão.",
+          "price": "11.50"
+        },
+        {
+          "name": "Pizza Marinara",
+          "description": "Molho de tomate, azeite extra virgem, oregãos e alho.",
+          "price": "10.50"
+        },
+        {
+          "name": "Pizza Sol",
+          "description": "Molho tomate, mozzarella, fiambre e oregãos.",
+          "price": "12.50"
+        },
+        {
+          "name": "Pizza Maré",
+          "description": "Molho tomate, mozzarella, bacon e oregãos.",
+          "price": "12.50"
+        },
+        {
+          "name": "Pizza Surf",
+          "description": "Molho tomate, mozzarella, pepperoni, cogumelos e oregãos.",
+          "price": "13.10"
+        },
+        {
+          "name": "Pizza Koya's",
+          "description": "Molho tomate, mozzarella, chouriço, cebola, azeitona e oregãos.",
+          "price": "12.90"
+        },
+        {
+          "name": "Pizza Mercado",
+          "description": "Molho tomate, mozzarella, cogumelos, pimento, azeitona, tomate cherry, rúcula e oregãos.",
+          "price": "13.50"
+        },
+        {
+          "name": "Pizza Carcavelos",
+          "description": "Molho tomate, mozzarella, presunto, rúcula, tomate cherry, parmesão e oregãos.",
+          "price": "13.50"
+        },
+        {
+          "name": "Pizza Praia",
+          "description": "4 queijos: mozzarella, parmesão, gorgonzola, provolone e oregãos.",
+          "price": "13.50"
+        },
+        {
+          "name": "Pizza Tubo Calzone",
+          "description": "Molho de tomate, mozzarella, fiambre, cogumelos, rúcula e ovo.",
+          "price": "14.50"
+        },
+        {
+          "name": "Pizza Vegan",
+          "description": "Molho de tomate, queijo vegan, dharma picado, cogumelos, cebola, azeitona e rúcula.",
+          "price": "14.90"
+        },
+        {
+          "name": "Ingrediente Extra",
+          "description": "Atum, ananás, anchovas, beterraba...",
+          "price": "1.00"
         }
       ],
-      "desserts": [
+      "saladas": [
         {
-          "name": "Crème Brûlée",
-          "description": "Creme clássico de baunilha com crosta de açúcar caramelizado.",
-          "price": "12"
+          "name": "Salada Frango",
+          "description": "Alface, frango desfiado, milho doce, tomate, cebola e cenoura ralada.",
+          "price": "8.80"
         },
         {
-          "name": "Fondant de Chocolate",
-          "description": "Bolo quente de chocolate negro com centro derretido, gelado de baunilha.",
-          "price": "14"
+          "name": "Salada Atum",
+          "description": "Alface, atum, ovo cozido, tomate, cebola roxa e azeitonas.",
+          "price": "8.80"
         },
         {
-          "name": "Tarte de Limão",
-          "description": "Creme de limão ácido, base de shortbread, merengue maçaricado.",
-          "price": "11"
+          "name": "Caprese",
+          "description": "Tomate, burratina, manjericão e rúcula.",
+          "price": "8.20"
+        },
+        {
+          "name": "Grega",
+          "description": "Tomate, pepino, queijo feta, azeitona, cebola e alcaparras.",
+          "price": "8.80"
+        },
+        {
+          "name": "Salada Koya's",
+          "description": "1 base, 2 proteínas e 3 ingredientes à escolha.",
+          "price": "10.30"
+        },
+        {
+          "name": "Wrap Anchovas",
+          "description": "Anchovas, queijo creme e rúcula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Wrap Salmão",
+          "description": "Salmão fumado, queijo creme e rúcula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Wrap Atum",
+          "description": "Atum, maionese, tomate seco em azeite e rúcula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Wrap Frango",
+          "description": "Frango desfiado, maionese, beterraba, cenoura e rúcula.",
+          "price": "7.90"
+        },
+        {
+          "name": "Wrap Vegan",
+          "description": "Cogumelos, milho doce, queijo creme vegan e rúcula.",
+          "price": "8.50"
         }
       ],
-      "drinks": [
+      "tostas": [
         {
-          "name": "Vinho Tinto da Casa",
-          "description": "Uma seleção rotativa de tintos encorpados e ousados.",
-          "price": "14"
+          "name": "Pão c/ Manteiga",
+          "description": "Pão torrado com manteiga.",
+          "price": "1.70"
         },
         {
-          "name": "Espresso Martini",
-          "description": "Vodka, espresso fresco, licor de café, xarope de baunilha.",
-          "price": "16"
+          "name": "Torrada",
+          "description": "Torrada clássica portuguesa.",
+          "price": "3.10"
         },
         {
-          "name": "Água com Gás",
-          "description": "San Pellegrino, 750ml.",
-          "price": "6"
+          "name": "Sandes Queijo ou Fiambre",
+          "description": "Sandes simples de queijo ou fiambre.",
+          "price": "2.90"
         },
         {
-          "name": "Cocktail da Estação",
-          "description": "Pergunte ao nosso staff sobre a criação exclusiva deste mês.",
-          "price": "18"
+          "name": "Sandes Mista",
+          "description": "Sandes de fiambre e queijo.",
+          "price": "3.70"
+        },
+        {
+          "name": "Sandes Presunto",
+          "description": "Sandes de presunto.",
+          "price": "3.90"
+        },
+        {
+          "name": "Sandes Frango ou Atum",
+          "description": "Sandes de frango ou atum.",
+          "price": "4.20"
+        },
+        {
+          "name": "Tosta Queijo ou Fiambre",
+          "description": "Tosta de queijo ou fiambre.",
+          "price": "4.50"
+        },
+        {
+          "name": "Tosta Mista",
+          "description": "Tosta de fiambre e queijo.",
+          "price": "5.20"
+        },
+        {
+          "name": "Tosta Presunto c/ Rúcula",
+          "description": "Tosta de presunto com rúcula fresca.",
+          "price": "6.20"
+        },
+        {
+          "name": "Tosta Frango ou Atum",
+          "description": "Tosta de frango ou atum.",
+          "price": "6.50"
+        }
+      ],
+      "sobremesas": [
+        {
+          "name": "Brownie",
+          "description": "Brownie rico de chocolate.",
+          "price": "3.90"
+        },
+        {
+          "name": "Cheesecake",
+          "description": "Cheesecake cremoso clássico.",
+          "price": "3.90"
+        },
+        {
+          "name": "Panacota",
+          "description": "Panacota italiana sedosa.",
+          "price": "3.90"
+        },
+        {
+          "name": "Mousse de Chocolate",
+          "description": "Mousse de chocolate caseira.",
+          "price": "3.40"
+        },
+        {
+          "name": "Salada de Frutas",
+          "description": "Salada fresca de frutas da época.",
+          "price": "3.40"
+        }
+      ],
+      "bebidas": [
+        { "name": "Café", "description": "Espresso.", "price": "0.90" },
+        {
+          "name": "Cappuccino",
+          "description": "Cappuccino clássico.",
+          "price": "2.50"
+        },
+        {
+          "name": "Galão",
+          "description": "Café com leite à portuguesa.",
+          "price": "1.70"
+        },
+        {
+          "name": "Imperial (20cl)",
+          "description": "Cerveja de pressão.",
+          "price": "1.20"
+        },
+        {
+          "name": "Imperial (50cl)",
+          "description": "Imperial grande.",
+          "price": "3.00"
+        },
+        {
+          "name": "Balde de Minis",
+          "description": "9 ou 15 unidades.",
+          "price": "9.90"
+        },
+        {
+          "name": "Vinho (Copo)",
+          "description": "Vinho da casa ao copo.",
+          "price": "3.90"
+        },
+        {
+          "name": "Vinho Reserva (Copo)",
+          "description": "Vinho reserva ao copo.",
+          "price": "5.00"
+        },
+        {
+          "name": "Sumo Natural",
+          "description": "Laranja ou limonada.",
+          "price": "3.50"
+        },
+        {
+          "name": "Spritz",
+          "description": "Aperol, espumante e água com gás.",
+          "price": "6.00"
+        },
+        {
+          "name": "Gin Tónico",
+          "description": "Gin tónico clássico.",
+          "price": "7.00"
+        },
+        {
+          "name": "Gin Hendricks",
+          "description": "Gin tónico premium.",
+          "price": "9.00"
+        },
+        {
+          "name": "Caipirinha",
+          "description": "Caipirinha clássica brasileira.",
+          "price": "8.00"
+        },
+        {
+          "name": "Mojito",
+          "description": "Mojito fresco com hortelã.",
+          "price": "8.00"
+        },
+        {
+          "name": "Moscow Mule",
+          "description": "Vodka, ginger beer e lima.",
+          "price": "8.00"
+        },
+        {
+          "name": "Sangria (Copo)",
+          "description": "Branca ou tinta. Também frutos vermelhos ou maracujá.",
+          "price": "6.00"
+        },
+        {
+          "name": "Jarro Sangria",
+          "description": "Branca ou tinta (jarro). Frutos vermelhos/maracujá também disponível.",
+          "price": "20.00"
+        },
+        {
+          "name": "Vinho (Garrafa)",
+          "description": "Vinho da casa.",
+          "price": "13.00"
+        },
+        {
+          "name": "Vinho Reserva (Garrafa)",
+          "description": "Vinho reserva.",
+          "price": "19.00"
         }
       ]
     }
   },
   "contact": {
-    "label": "Entre em Contacto",
-    "title": "Reserve uma Mesa",
+    "label": "Venha Visitar-nos",
+    "title": "Encontre-nos",
     "hours": {
       "title": "Horário de Funcionamento",
       "weekdays": "Segunda — Sexta",
-      "weekdaysTime": "11:00 — 22:00",
+      "weekdaysTime": "9:00 — 00:00",
       "saturday": "Sábado",
-      "saturdayTime": "10:00 — 23:00",
+      "saturdayTime": "9:00 — 00:00",
       "sunday": "Domingo",
-      "sundayTime": "10:00 — 21:00"
+      "sundayTime": "9:00 — 00:00"
     },
     "location": {
       "title": "Localização",
-      "line1": "Rua Principal, 123",
-      "line2": "Centro, Sua Cidade, 10001"
+      "line1": "Mercado de Carcavelos",
+      "line2": "Praça Dr. Manuel Rebello de Andrade, 2775-684 Carcavelos"
     },
     "details": {
       "title": "Contacto",
       "phoneLabel": "Telefone:",
-      "phone": "(555) 123-4567",
-      "emailLabel": "Email:",
-      "email": "hello@thegoldenfork.com"
+      "phone": "962 075 610",
+      "emailLabel": "Instagram:",
+      "email": "@koyas_bistro"
     },
     "mapPlaceholder": "Incorporar Google Maps aqui",
     "form": {
-      "title": "Fazer uma Reserva",
+      "title": "Envie-nos uma Mensagem",
       "firstName": "Primeiro Nome",
       "firstNamePlaceholder": "João",
       "lastName": "Apelido",
@@ -158,20 +460,27 @@
       "date": "Data",
       "time": "Hora",
       "timePlaceholder": "Selecionar hora",
-      "guests": "Número de Convidados",
-      "guestsPlaceholder": "Selecionar convidados",
-      "guestOptions": ["1 Convidado", "2 Convidados", "3 Convidados", "4 Convidados", "5 Convidados", "6+ Convidados"],
-      "specialRequests": "Pedidos Especiais",
-      "specialRequestsPlaceholder": "Alergias, celebrações, preferências de lugar...",
-      "submit": "Reservar Agora",
+      "guests": "Número de Pessoas",
+      "guestsPlaceholder": "Selecionar pessoas",
+      "guestOptions": [
+        "1 Pessoa",
+        "2 Pessoas",
+        "3 Pessoas",
+        "4 Pessoas",
+        "5 Pessoas",
+        "6+ Pessoas"
+      ],
+      "specialRequests": "Mensagem",
+      "specialRequestsPlaceholder": "Perguntas, reservas ou pedidos especiais...",
+      "submit": "Enviar Mensagem",
       "thankYouTitle": "Obrigado!",
-      "thankYouMessage": "Confirmaremos a sua reserva em breve."
+      "thankYouMessage": "Entraremos em contacto em breve."
     }
   },
   "footer": {
-    "description": "Uma experiência gastronómica moderna com ingredientes locais e sabores marcantes. Junte-se a nós para uma refeição inesquecível.",
+    "description": "Café, bar e bistrô no coração do Mercado de Carcavelos. Comida caseira, pizzas no forno a lenha, cervejas artesanais e excelentes cocktails. Aberto todos os dias, das 9h à meia-noite.",
     "quickLinks": "Links Rápidos",
     "followUs": "Siga-nos",
-    "copyright": "The Golden Fork. Todos os direitos reservados."
+    "copyright": "Koya's Bistrô. Todos os direitos reservados."
   }
 }
