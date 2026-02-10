@@ -1,0 +1,177 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "menu": "Menu",
+    "contact": "Contacto",
+    "reserve": "Reservar"
+  },
+  "hero": {
+    "established": "Est. 2025",
+    "title": "The Golden Fork",
+    "subtitle": "Uma experiência gastronómica moderna com ingredientes locais e sabores marcantes.",
+    "viewMenu": "Ver Menu",
+    "reserveTable": "Reservar Mesa"
+  },
+  "about": {
+    "label": "A Nossa História",
+    "title": "Uma Paixão pelo Sabor",
+    "imagePlaceholder": "Foto do restaurante aqui",
+    "paragraph1": "Fundado em 2025, o The Golden Fork nasceu de uma crença simples: a boa comida começa com bons ingredientes. Cada prato do nosso menu é preparado com produtos sazonais e de origem local — trabalhando diretamente com agricultores e fornecedores que partilham o nosso compromisso com a qualidade.",
+    "paragraph2": "O nosso chef traz mais de 15 anos de experiência culinária em cozinhas por toda a Europa e Ásia, combinando técnicas clássicas com sabores modernos e ousados. O resultado é um menu que é simultaneamente familiar e surpreendente.",
+    "paragraph3": "Quer nos visite para um jantar casual durante a semana ou para uma celebração especial, queremos que cada visita seja pessoal. Boa comida, serviço acolhedor e um ambiente que o faz querer ficar mais um pouco — é isso que nos define.",
+    "stat1Value": "15+",
+    "stat1Label": "Anos de Experiência",
+    "stat2Value": "50+",
+    "stat2Label": "Pratos no Menu",
+    "stat3Value": "12",
+    "stat3Label": "Fornecedores Locais"
+  },
+  "menu": {
+    "label": "O Que Servimos",
+    "title": "O Nosso Menu",
+    "categories": {
+      "starters": "Entradas",
+      "mains": "Pratos Principais",
+      "desserts": "Sobremesas",
+      "drinks": "Bebidas"
+    },
+    "items": {
+      "starters": [
+        {
+          "name": "Burrata com Trufa",
+          "description": "Burrata cremosa com trufa negra, tomates tradicionais e balsâmico envelhecido.",
+          "price": "16"
+        },
+        {
+          "name": "Calamares Crocantes",
+          "description": "Levemente fritos com aioli de limão e pimentos em conserva.",
+          "price": "14"
+        },
+        {
+          "name": "Salada de Beterraba Assada",
+          "description": "Beterrabas douradas e vermelhas, queijo de cabra, nozes caramelizadas, vinagrete cítrico.",
+          "price": "13"
+        },
+        {
+          "name": "Sopa de Cebola Francesa",
+          "description": "Cebolas cozinhadas lentamente, caldo rico de carne, crouton de gruyère.",
+          "price": "12"
+        }
+      ],
+      "mains": [
+        {
+          "name": "Salmão Grelhado",
+          "description": "Salmão do Atlântico, batatas esmagadas, espargos, molho beurre blanc de endro.",
+          "price": "32"
+        },
+        {
+          "name": "Costela Estufada",
+          "description": "Carne estufada durante 12 horas, polenta cremosa, legumes de raiz assados.",
+          "price": "36"
+        },
+        {
+          "name": "Risotto de Cogumelos Selvagens",
+          "description": "Arroz arbório, cogumelos porcini e chanterelle, parmesão, óleo de trufa.",
+          "price": "26"
+        },
+        {
+          "name": "Costeletas de Borrego Grelhadas",
+          "description": "Borrego da Nova Zelândia com crosta de ervas, chimichurri de hortelã, puré de alho assado.",
+          "price": "38"
+        }
+      ],
+      "desserts": [
+        {
+          "name": "Crème Brûlée",
+          "description": "Creme clássico de baunilha com crosta de açúcar caramelizado.",
+          "price": "12"
+        },
+        {
+          "name": "Fondant de Chocolate",
+          "description": "Bolo quente de chocolate negro com centro derretido, gelado de baunilha.",
+          "price": "14"
+        },
+        {
+          "name": "Tarte de Limão",
+          "description": "Creme de limão ácido, base de shortbread, merengue maçaricado.",
+          "price": "11"
+        }
+      ],
+      "drinks": [
+        {
+          "name": "Vinho Tinto da Casa",
+          "description": "Uma seleção rotativa de tintos encorpados e ousados.",
+          "price": "14"
+        },
+        {
+          "name": "Espresso Martini",
+          "description": "Vodka, espresso fresco, licor de café, xarope de baunilha.",
+          "price": "16"
+        },
+        {
+          "name": "Água com Gás",
+          "description": "San Pellegrino, 750ml.",
+          "price": "6"
+        },
+        {
+          "name": "Cocktail da Estação",
+          "description": "Pergunte ao nosso staff sobre a criação exclusiva deste mês.",
+          "price": "18"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "label": "Entre em Contacto",
+    "title": "Reserve uma Mesa",
+    "hours": {
+      "title": "Horário de Funcionamento",
+      "weekdays": "Segunda — Sexta",
+      "weekdaysTime": "11:00 — 22:00",
+      "saturday": "Sábado",
+      "saturdayTime": "10:00 — 23:00",
+      "sunday": "Domingo",
+      "sundayTime": "10:00 — 21:00"
+    },
+    "location": {
+      "title": "Localização",
+      "line1": "Rua Principal, 123",
+      "line2": "Centro, Sua Cidade, 10001"
+    },
+    "details": {
+      "title": "Contacto",
+      "phoneLabel": "Telefone:",
+      "phone": "(555) 123-4567",
+      "emailLabel": "Email:",
+      "email": "hello@thegoldenfork.com"
+    },
+    "mapPlaceholder": "Incorporar Google Maps aqui",
+    "form": {
+      "title": "Fazer uma Reserva",
+      "firstName": "Primeiro Nome",
+      "firstNamePlaceholder": "João",
+      "lastName": "Apelido",
+      "lastNamePlaceholder": "Silva",
+      "email": "Email",
+      "emailPlaceholder": "joao@exemplo.com",
+      "date": "Data",
+      "time": "Hora",
+      "timePlaceholder": "Selecionar hora",
+      "guests": "Número de Convidados",
+      "guestsPlaceholder": "Selecionar convidados",
+      "guestOptions": ["1 Convidado", "2 Convidados", "3 Convidados", "4 Convidados", "5 Convidados", "6+ Convidados"],
+      "specialRequests": "Pedidos Especiais",
+      "specialRequestsPlaceholder": "Alergias, celebrações, preferências de lugar...",
+      "submit": "Reservar Agora",
+      "thankYouTitle": "Obrigado!",
+      "thankYouMessage": "Confirmaremos a sua reserva em breve."
+    }
+  },
+  "footer": {
+    "description": "Uma experiência gastronómica moderna com ingredientes locais e sabores marcantes. Junte-se a nós para uma refeição inesquecível.",
+    "quickLinks": "Links Rápidos",
+    "followUs": "Siga-nos",
+    "copyright": "The Golden Fork. Todos os direitos reservados."
+  }
+}

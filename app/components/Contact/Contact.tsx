@@ -2,11 +2,61 @@
 
 import { useState } from "react";
 
-export default function Contact() {
+type ContactDict = {
+  label: string;
+  title: string;
+  hours: {
+    title: string;
+    weekdays: string;
+    weekdaysTime: string;
+    saturday: string;
+    saturdayTime: string;
+    sunday: string;
+    sundayTime: string;
+  };
+  location: {
+    title: string;
+    line1: string;
+    line2: string;
+  };
+  details: {
+    title: string;
+    phoneLabel: string;
+    phone: string;
+    emailLabel: string;
+    email: string;
+  };
+  mapPlaceholder: string;
+  form: {
+    title: string;
+    firstName: string;
+    firstNamePlaceholder: string;
+    lastName: string;
+    lastNamePlaceholder: string;
+    email: string;
+    emailPlaceholder: string;
+    date: string;
+    time: string;
+    timePlaceholder: string;
+    guests: string;
+    guestsPlaceholder: string;
+    guestOptions: string[];
+    specialRequests: string;
+    specialRequestsPlaceholder: string;
+    submit: string;
+    thankYouTitle: string;
+    thankYouMessage: string;
+  };
+};
+
+type Props = {
+  dict: ContactDict;
+};
+
+export default function Contact({ dict }: Props) {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setSubmitted(true);
   };
 
@@ -16,66 +66,66 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-[0.3em] text-amber-500 mb-4">
-            Get In Touch
+            {dict.label}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold font-serif text-zinc-900">
-            Reserve a Table
+            {dict.title}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-16">
           {/* Left Column — Info */}
           <div className="space-y-10">
-            {/* Hours */}
             <div>
               <h3 className="text-lg font-semibold text-zinc-900 mb-4">
-                Opening Hours
+                {dict.hours.title}
               </h3>
               <div className="space-y-2 text-zinc-600">
                 <div className="flex justify-between">
-                  <span>Monday — Friday</span>
-                  <span>11:00 AM — 10:00 PM</span>
+                  <span>{dict.hours.weekdays}</span>
+                  <span>{dict.hours.weekdaysTime}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span>10:00 AM — 11:00 PM</span>
+                  <span>{dict.hours.saturday}</span>
+                  <span>{dict.hours.saturdayTime}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Sunday</span>
-                  <span>10:00 AM — 9:00 PM</span>
+                  <span>{dict.hours.sunday}</span>
+                  <span>{dict.hours.sundayTime}</span>
                 </div>
               </div>
             </div>
 
-            {/* Location */}
             <div>
               <h3 className="text-lg font-semibold text-zinc-900 mb-4">
-                Location
+                {dict.location.title}
               </h3>
               <div className="space-y-1 text-zinc-600">
-                <p>123 Main Street</p>
-                <p>Downtown, Your City, ST 10001</p>
+                <p>{dict.location.line1}</p>
+                <p>{dict.location.line2}</p>
               </div>
             </div>
 
-            {/* Contact Details */}
             <div>
               <h3 className="text-lg font-semibold text-zinc-900 mb-4">
-                Contact
+                {dict.details.title}
               </h3>
               <div className="space-y-1 text-zinc-600">
                 <p>
-                  <span className="text-zinc-400 mr-2">Phone:</span>
-                  (555) 123-4567
+                  <span className="text-zinc-400 mr-2">
+                    {dict.details.phoneLabel}
+                  </span>
+                  {dict.details.phone}
                 </p>
                 <p>
-                  <span className="text-zinc-400 mr-2">Email:</span>
-                  hello@thegoldenfork.com
+                  <span className="text-zinc-400 mr-2">
+                    {dict.details.emailLabel}
+                  </span>
+                  {dict.details.email}
                 </p>
               </div>
             </div>
 
-            {/* Map Placeholder */}
             <div className="aspect-video bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-400">
               <div className="text-center">
                 <svg
@@ -96,7 +146,7 @@ export default function Contact() {
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                   />
                 </svg>
-                <p className="text-sm">Embed Google Map here</p>
+                <p className="text-sm">{dict.mapPlaceholder}</p>
               </div>
             </div>
           </div>
@@ -121,36 +171,34 @@ export default function Contact() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold font-serif text-zinc-900 mb-2">
-                  Thank You!
+                  {dict.form.thankYouTitle}
                 </h3>
-                <p className="text-zinc-500">
-                  We&apos;ll confirm your reservation shortly.
-                </p>
+                <p className="text-zinc-500">{dict.form.thankYouMessage}</p>
               </div>
             ) : (
               <>
                 <h3 className="text-2xl font-bold font-serif text-zinc-900 mb-6">
-                  Make a Reservation
+                  {dict.form.title}
                 </h3>
                 <div className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                        First Name
+                        {dict.form.firstName}
                       </label>
                       <input
                         type="text"
-                        placeholder="John"
+                        placeholder={dict.form.firstNamePlaceholder}
                         className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                        Last Name
+                        {dict.form.lastName}
                       </label>
                       <input
                         type="text"
-                        placeholder="Doe"
+                        placeholder={dict.form.lastNamePlaceholder}
                         className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                       />
                     </div>
@@ -158,11 +206,11 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                      Email
+                      {dict.form.email}
                     </label>
                     <input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder={dict.form.emailPlaceholder}
                       className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                     />
                   </div>
@@ -170,7 +218,7 @@ export default function Contact() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                        Date
+                        {dict.form.date}
                       </label>
                       <input
                         type="date"
@@ -179,10 +227,10 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                        Time
+                        {dict.form.time}
                       </label>
                       <select className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
-                        <option value="">Select time</option>
+                        <option value="">{dict.form.timePlaceholder}</option>
                         <option>11:00 AM</option>
                         <option>12:00 PM</option>
                         <option>1:00 PM</option>
@@ -197,26 +245,23 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                      Number of Guests
+                      {dict.form.guests}
                     </label>
                     <select className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
-                      <option value="">Select guests</option>
-                      <option>1 Guest</option>
-                      <option>2 Guests</option>
-                      <option>3 Guests</option>
-                      <option>4 Guests</option>
-                      <option>5 Guests</option>
-                      <option>6+ Guests</option>
+                      <option value="">{dict.form.guestsPlaceholder}</option>
+                      {dict.form.guestOptions.map((option) => (
+                        <option key={option}>{option}</option>
+                      ))}
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1.5">
-                      Special Requests
+                      {dict.form.specialRequests}
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Allergies, celebrations, seating preferences..."
+                      placeholder={dict.form.specialRequestsPlaceholder}
                       className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 resize-none"
                     />
                   </div>
@@ -225,7 +270,7 @@ export default function Contact() {
                     onClick={handleSubmit}
                     className="w-full rounded-full bg-amber-500 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
                   >
-                    Reserve Now
+                    {dict.form.submit}
                   </button>
                 </div>
               </>

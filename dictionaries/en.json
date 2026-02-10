@@ -1,0 +1,177 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "menu": "Menu",
+    "contact": "Contact",
+    "reserve": "Reserve"
+  },
+  "hero": {
+    "established": "Est. 2025",
+    "title": "The Golden Fork",
+    "subtitle": "A modern dining experience with locally sourced ingredients and bold flavors.",
+    "viewMenu": "View Menu",
+    "reserveTable": "Reserve a Table"
+  },
+  "about": {
+    "label": "Our Story",
+    "title": "A Passion for Flavor",
+    "imagePlaceholder": "Restaurant photo here",
+    "paragraph1": "Founded in 2025, The Golden Fork was born from a simple belief: that great food starts with great ingredients. Every dish on our menu is crafted from locally sourced, seasonal produce — working directly with farmers and suppliers who share our commitment to quality.",
+    "paragraph2": "Our chef brings over 15 years of culinary experience from kitchens across Europe and Asia, blending classic techniques with bold, modern flavors. The result is a menu that feels both familiar and exciting.",
+    "paragraph3": "Whether you're joining us for a casual weeknight dinner or a special celebration, we want every visit to feel personal. Good food, warm service, and an atmosphere that makes you want to stay a little longer — that's what we're all about.",
+    "stat1Value": "15+",
+    "stat1Label": "Years Experience",
+    "stat2Value": "50+",
+    "stat2Label": "Menu Items",
+    "stat3Value": "12",
+    "stat3Label": "Local Suppliers"
+  },
+  "menu": {
+    "label": "What We Serve",
+    "title": "Our Menu",
+    "categories": {
+      "starters": "Starters",
+      "mains": "Mains",
+      "desserts": "Desserts",
+      "drinks": "Drinks"
+    },
+    "items": {
+      "starters": [
+        {
+          "name": "Truffle Burrata",
+          "description": "Creamy burrata with black truffle, heirloom tomatoes, and aged balsamic.",
+          "price": "16"
+        },
+        {
+          "name": "Crispy Calamari",
+          "description": "Lightly fried with lemon aioli and pickled peppers.",
+          "price": "14"
+        },
+        {
+          "name": "Roasted Beet Salad",
+          "description": "Golden and red beets, goat cheese, candied walnuts, citrus vinaigrette.",
+          "price": "13"
+        },
+        {
+          "name": "French Onion Soup",
+          "description": "Slow-cooked onions, rich beef broth, gruyère crouton.",
+          "price": "12"
+        }
+      ],
+      "mains": [
+        {
+          "name": "Pan-Seared Salmon",
+          "description": "Atlantic salmon, crushed potatoes, asparagus, dill beurre blanc.",
+          "price": "32"
+        },
+        {
+          "name": "Braised Short Rib",
+          "description": "12-hour braised beef, creamy polenta, roasted root vegetables.",
+          "price": "36"
+        },
+        {
+          "name": "Wild Mushroom Risotto",
+          "description": "Arborio rice, porcini and chanterelle mushrooms, parmesan, truffle oil.",
+          "price": "26"
+        },
+        {
+          "name": "Grilled Lamb Chops",
+          "description": "Herb-crusted New Zealand lamb, mint chimichurri, roasted garlic mash.",
+          "price": "38"
+        }
+      ],
+      "desserts": [
+        {
+          "name": "Crème Brûlée",
+          "description": "Classic vanilla bean custard with a caramelized sugar crust.",
+          "price": "12"
+        },
+        {
+          "name": "Chocolate Fondant",
+          "description": "Warm dark chocolate cake with a molten center, vanilla gelato.",
+          "price": "14"
+        },
+        {
+          "name": "Lemon Tart",
+          "description": "Tangy lemon curd, shortbread crust, torched meringue.",
+          "price": "11"
+        }
+      ],
+      "drinks": [
+        {
+          "name": "House Red Wine",
+          "description": "A rotating selection of bold, full-bodied reds.",
+          "price": "14"
+        },
+        {
+          "name": "Espresso Martini",
+          "description": "Vodka, fresh espresso, coffee liqueur, vanilla syrup.",
+          "price": "16"
+        },
+        {
+          "name": "Sparkling Water",
+          "description": "San Pellegrino, 750ml.",
+          "price": "6"
+        },
+        {
+          "name": "Seasonal Cocktail",
+          "description": "Ask your server about this month's signature creation.",
+          "price": "18"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "label": "Get In Touch",
+    "title": "Reserve a Table",
+    "hours": {
+      "title": "Opening Hours",
+      "weekdays": "Monday — Friday",
+      "weekdaysTime": "11:00 AM — 10:00 PM",
+      "saturday": "Saturday",
+      "saturdayTime": "10:00 AM — 11:00 PM",
+      "sunday": "Sunday",
+      "sundayTime": "10:00 AM — 9:00 PM"
+    },
+    "location": {
+      "title": "Location",
+      "line1": "123 Main Street",
+      "line2": "Downtown, Your City, ST 10001"
+    },
+    "details": {
+      "title": "Contact",
+      "phoneLabel": "Phone:",
+      "phone": "(555) 123-4567",
+      "emailLabel": "Email:",
+      "email": "hello@thegoldenfork.com"
+    },
+    "mapPlaceholder": "Embed Google Map here",
+    "form": {
+      "title": "Make a Reservation",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "date": "Date",
+      "time": "Time",
+      "timePlaceholder": "Select time",
+      "guests": "Number of Guests",
+      "guestsPlaceholder": "Select guests",
+      "guestOptions": ["1 Guest", "2 Guests", "3 Guests", "4 Guests", "5 Guests", "6+ Guests"],
+      "specialRequests": "Special Requests",
+      "specialRequestsPlaceholder": "Allergies, celebrations, seating preferences...",
+      "submit": "Reserve Now",
+      "thankYouTitle": "Thank You!",
+      "thankYouMessage": "We'll confirm your reservation shortly."
+    }
+  },
+  "footer": {
+    "description": "A modern dining experience with locally sourced ingredients and bold flavors. Join us for an unforgettable meal.",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "copyright": "The Golden Fork. All rights reserved."
+  }
+}

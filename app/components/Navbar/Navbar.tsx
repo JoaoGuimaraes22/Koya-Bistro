@@ -1,17 +1,36 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Menu", href: "#menu" },
-  { label: "Contact", href: "#contact" },
-];
+type NavbarDict = {
+  home: string;
+  about: string;
+  menu: string;
+  contact: string;
+  reserve: string;
+};
 
-export default function Navbar() {
+type Props = {
+  dict: NavbarDict;
+  locale: string;
+};
+
+export default function Navbar({ dict, locale }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { label: dict.home, href: `/${locale}#` },
+    { label: dict.about, href: `/${locale}#about` },
+    { label: dict.menu, href: `/${locale}#menu` },
+    { label: dict.contact, href: `/${locale}#contact` },
+  ];
+
+  // Get the path without locale for switching
+  const pathWithoutLocale = pathname.replace(/^\/(en|pt)/, "") || "/";
+  const otherLocale = locale === "en" ? "pt" : "en";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +50,10 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#" className="font-serif text-2xl font-bold text-white">
+        <a
+          href={`/${locale}`}
+          className="font-serif text-2xl font-bold text-white"
+        >
           The Golden Fork
         </a>
 
@@ -49,10 +71,19 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="#contact"
+              href={`/${locale}#contact`}
               className="rounded-full bg-amber-500 px-5 py-2 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
             >
-              Reserve
+              {dict.reserve}
+            </a>
+          </li>
+          {/* Language Switcher */}
+          <li>
+            <a
+              href={`/${otherLocale}${pathWithoutLocale}`}
+              className="text-sm uppercase tracking-wide text-zinc-400 hover:text-white transition-colors border border-zinc-600 rounded-full px-3 py-1"
+            >
+              {otherLocale.toUpperCase()}
             </a>
           </li>
         </ul>
@@ -84,7 +115,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? "max-h-80" : "max-h-0"
+          mobileOpen ? "max-h-96" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col items-center gap-6 bg-zinc-900/95 backdrop-blur-sm px-6 py-8">
@@ -101,11 +132,20 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="#contact"
+              href={`/${locale}#contact`}
               onClick={() => setMobileOpen(false)}
               className="rounded-full bg-amber-500 px-6 py-2 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
             >
-              Reserve
+              {dict.reserve}
+            </a>
+          </li>
+          {/* Mobile Language Switcher */}
+          <li>
+            <a
+              href={`/${otherLocale}${pathWithoutLocale}`}
+              className="text-sm uppercase tracking-wide text-zinc-400 hover:text-white transition-colors border border-zinc-600 rounded-full px-4 py-1.5"
+            >
+              {otherLocale === "en" ? "English" : "Português"}
             </a>
           </li>
         </ul>

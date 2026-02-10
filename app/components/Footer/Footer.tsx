@@ -1,4 +1,24 @@
-export default function Footer() {
+type FooterDict = {
+  description: string;
+  quickLinks: string;
+  followUs: string;
+  copyright: string;
+};
+
+type NavbarDict = {
+  home: string;
+  about: string;
+  menu: string;
+  contact: string;
+};
+
+type Props = {
+  dict: FooterDict;
+  navDict: NavbarDict;
+  locale: string;
+};
+
+export default function Footer({ dict, navDict, locale }: Props) {
   return (
     <footer className="bg-zinc-900 text-zinc-400 px-6 py-16">
       <div className="mx-auto max-w-6xl">
@@ -8,45 +28,45 @@ export default function Footer() {
             <h3 className="font-serif text-2xl font-bold text-white mb-4">
               The Golden Fork
             </h3>
-            <p className="text-sm leading-relaxed">
-              A modern dining experience with locally sourced ingredients and
-              bold flavors. Join us for an unforgettable meal.
-            </p>
+            <p className="text-sm leading-relaxed">{dict.description}</p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wide text-white mb-4">
-              Quick Links
+              {dict.quickLinks}
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-amber-400 transition-colors">
-                  Home
+                <a
+                  href={`/${locale}`}
+                  className="hover:text-amber-400 transition-colors"
+                >
+                  {navDict.home}
                 </a>
               </li>
               <li>
                 <a
-                  href="#about"
+                  href={`/${locale}#about`}
                   className="hover:text-amber-400 transition-colors"
                 >
-                  About
+                  {navDict.about}
                 </a>
               </li>
               <li>
                 <a
-                  href="#menu"
+                  href={`/${locale}#menu`}
                   className="hover:text-amber-400 transition-colors"
                 >
-                  Menu
+                  {navDict.menu}
                 </a>
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href={`/${locale}#contact`}
                   className="hover:text-amber-400 transition-colors"
                 >
-                  Reservations
+                  {navDict.contact}
                 </a>
               </li>
             </ul>
@@ -55,7 +75,7 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wide text-white mb-4">
-              Follow Us
+              {dict.followUs}
             </h4>
             <div className="flex gap-4">
               <a
@@ -104,8 +124,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-zinc-800 pt-8 text-center text-sm">
           <p>
-            &copy; {new Date().getFullYear()} The Golden Fork. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} {dict.copyright}
           </p>
         </div>
       </div>
