@@ -1,3 +1,7 @@
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Navbar/Navbar";
 
 export default function Home() {
@@ -31,6 +35,14 @@ export default function Home() {
           </a>
         </div>
       </section>
+      {/* About Section */}
+      <About />
+      {/* Menu Section */}
+      <Menu />
+      {/* Contact Section */}
+      <Contact />
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
