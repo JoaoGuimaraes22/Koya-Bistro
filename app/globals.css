@@ -9,8 +9,39 @@ body {
     sans-serif;
   color: #1a1a1a;
   background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-serif {
   font-family: "Georgia", "Palatino", "Times New Roman", serif;
+}
+
+/* Hide scrollbar for horizontal scroll tabs */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent iOS zoom on form focus (inputs < 16px trigger zoom) */
+@supports (-webkit-touch-callout: none) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal overflow on mobile */
+html,
+body {
+  overflow-x: hidden;
 }

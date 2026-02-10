@@ -20,27 +20,29 @@ type Props = {
 
 export default function Footer({ dict, navDict, locale }: Props) {
   return (
-    <footer className="bg-zinc-900 text-zinc-400 px-6 py-16">
+    <footer className="bg-zinc-900 text-zinc-400 px-5 sm:px-6 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 mb-10 sm:mb-12">
           {/* Brand */}
-          <div>
-            <h3 className="font-serif text-2xl font-bold text-white mb-4">
+          <div className="sm:col-span-2 md:col-span-1">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
               Koya&apos;s
             </h3>
-            <p className="text-sm leading-relaxed">{dict.description}</p>
+            <p className="text-sm leading-relaxed max-w-xs">
+              {dict.description}
+            </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wide text-white mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-white mb-3 sm:mb-4">
               {dict.quickLinks}
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <a
                   href={`/${locale}`}
-                  className="hover:text-amber-400 transition-colors"
+                  className="hover:text-amber-400 transition-colors py-1 inline-block"
                 >
                   {navDict.home}
                 </a>
@@ -48,7 +50,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
               <li>
                 <a
                   href={`/${locale}#about`}
-                  className="hover:text-amber-400 transition-colors"
+                  className="hover:text-amber-400 transition-colors py-1 inline-block"
                 >
                   {navDict.about}
                 </a>
@@ -56,7 +58,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
               <li>
                 <a
                   href={`/${locale}#menu`}
-                  className="hover:text-amber-400 transition-colors"
+                  className="hover:text-amber-400 transition-colors py-1 inline-block"
                 >
                   {navDict.menu}
                 </a>
@@ -64,7 +66,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
               <li>
                 <a
                   href={`/${locale}#contact`}
-                  className="hover:text-amber-400 transition-colors"
+                  className="hover:text-amber-400 transition-colors py-1 inline-block"
                 >
                   {navDict.contact}
                 </a>
@@ -74,16 +76,16 @@ export default function Footer({ dict, navDict, locale }: Props) {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wide text-white mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-white mb-3 sm:mb-4">
               {dict.followUs}
             </h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <a
                 href="https://www.instagram.com/koyas_bistro"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
+                className="w-11 h-11 sm:w-10 sm:h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -96,7 +98,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
+                className="w-11 h-11 sm:w-10 sm:h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -109,7 +111,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
               <a
                 href="#"
                 aria-label="X / Twitter"
-                className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
+                className="w-11 h-11 sm:w-10 sm:h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:border-amber-500 hover:text-amber-400 transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -124,7 +126,7 @@ export default function Footer({ dict, navDict, locale }: Props) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-zinc-800 pt-8 text-center text-sm">
+        <div className="border-t border-zinc-800 pt-6 sm:pt-8 text-center text-xs sm:text-sm">
           <p>
             &copy; {new Date().getFullYear()} {dict.copyright}
           </p>

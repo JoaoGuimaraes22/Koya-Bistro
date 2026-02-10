@@ -61,67 +61,79 @@ export default function Contact({ dict }: Props) {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-white">
+    <section id="contact" className="py-16 sm:py-24 px-5 sm:px-6 bg-white">
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-[0.3em] text-amber-500 mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-amber-500 mb-3 sm:mb-4">
             {dict.label}
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold font-serif text-zinc-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-zinc-900">
             {dict.title}
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-10 sm:gap-16">
           {/* Left Column — Info */}
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
             <div>
-              <h3 className="text-lg font-semibold text-zinc-900 mb-4">
+              <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
                 {dict.hours.title}
               </h3>
-              <div className="space-y-2 text-zinc-600">
-                <div className="flex justify-between">
+              <div className="space-y-2 text-sm sm:text-base text-zinc-600">
+                <div className="flex justify-between gap-4">
                   <span>{dict.hours.weekdays}</span>
-                  <span>{dict.hours.weekdaysTime}</span>
+                  <span className="shrink-0">{dict.hours.weekdaysTime}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-4">
                   <span>{dict.hours.saturday}</span>
-                  <span>{dict.hours.saturdayTime}</span>
+                  <span className="shrink-0">{dict.hours.saturdayTime}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-4">
                   <span>{dict.hours.sunday}</span>
-                  <span>{dict.hours.sundayTime}</span>
+                  <span className="shrink-0">{dict.hours.sundayTime}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-zinc-900 mb-4">
+              <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
                 {dict.location.title}
               </h3>
-              <div className="space-y-1 text-zinc-600">
+              <div className="space-y-1 text-sm sm:text-base text-zinc-600">
                 <p>{dict.location.line1}</p>
                 <p>{dict.location.line2}</p>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-zinc-900 mb-4">
+              <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
                 {dict.details.title}
               </h3>
-              <div className="space-y-1 text-zinc-600">
-                <p>
-                  <span className="text-zinc-400 mr-2">
+              <div className="space-y-2 text-sm sm:text-base text-zinc-600">
+                <p className="flex flex-wrap gap-x-2">
+                  <span className="text-zinc-400">
                     {dict.details.phoneLabel}
                   </span>
-                  {dict.details.phone}
+                  <a
+                    href={`tel:${dict.details.phone.replace(/\s/g, "")}`}
+                    className="hover:text-amber-500 transition-colors"
+                  >
+                    {dict.details.phone}
+                  </a>
                 </p>
-                <p>
-                  <span className="text-zinc-400 mr-2">
+                <p className="flex flex-wrap gap-x-2">
+                  <span className="text-zinc-400">
                     {dict.details.emailLabel}
                   </span>
-                  {dict.details.email}
+                  <a
+                    href="https://www.instagram.com/koyas_bistro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-amber-500 transition-colors"
+                  >
+                    {dict.details.email}
+                  </a>
                 </p>
               </div>
             </div>
@@ -129,7 +141,7 @@ export default function Contact({ dict }: Props) {
             <div className="aspect-video bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-400">
               <div className="text-center">
                 <svg
-                  className="w-10 h-10 mx-auto mb-2"
+                  className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={1.5}
@@ -146,18 +158,18 @@ export default function Contact({ dict }: Props) {
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                   />
                 </svg>
-                <p className="text-sm">{dict.mapPlaceholder}</p>
+                <p className="text-xs sm:text-sm">{dict.mapPlaceholder}</p>
               </div>
             </div>
           </div>
 
-          {/* Right Column — Reservation Form */}
-          <div className="bg-zinc-50 rounded-2xl p-8 md:p-10">
+          {/* Right Column — Form */}
+          <div className="bg-zinc-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10">
             {submitted ? (
-              <div className="flex flex-col items-center justify-center h-full text-center py-16">
-                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+              <div className="flex flex-col items-center justify-center h-full text-center py-12 sm:py-16">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-100 rounded-full flex items-center justify-center mb-5 sm:mb-6">
                   <svg
-                    className="w-8 h-8 text-amber-500"
+                    className="w-7 h-7 sm:w-8 sm:h-8 text-amber-500"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -170,84 +182,90 @@ export default function Contact({ dict }: Props) {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold font-serif text-zinc-900 mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900 mb-2">
                   {dict.form.thankYouTitle}
                 </h3>
-                <p className="text-zinc-500">{dict.form.thankYouMessage}</p>
+                <p className="text-sm sm:text-base text-zinc-500">
+                  {dict.form.thankYouMessage}
+                </p>
               </div>
             ) : (
               <>
-                <h3 className="text-2xl font-bold font-serif text-zinc-900 mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900 mb-5 sm:mb-6">
                   {dict.form.title}
                 </h3>
-                <div className="space-y-5">
-                  <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 sm:space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                         {dict.form.firstName}
                       </label>
                       <input
                         type="text"
                         placeholder={dict.form.firstNamePlaceholder}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                         {dict.form.lastName}
                       </label>
                       <input
                         type="text"
                         placeholder={dict.form.lastNamePlaceholder}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                       {dict.form.email}
                     </label>
                     <input
                       type="email"
                       placeholder={dict.form.emailPlaceholder}
-                      className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                      className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                         {dict.form.date}
                       </label>
                       <input
                         type="date"
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                         {dict.form.time}
                       </label>
-                      <select className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                      <select className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
                         <option value="">{dict.form.timePlaceholder}</option>
-                        <option>11:00 AM</option>
-                        <option>12:00 PM</option>
-                        <option>1:00 PM</option>
-                        <option>5:00 PM</option>
-                        <option>6:00 PM</option>
-                        <option>7:00 PM</option>
-                        <option>8:00 PM</option>
-                        <option>9:00 PM</option>
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>18:00</option>
+                        <option>19:00</option>
+                        <option>20:00</option>
+                        <option>21:00</option>
+                        <option>22:00</option>
+                        <option>23:00</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                       {dict.form.guests}
                     </label>
-                    <select className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                    <select className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
                       <option value="">{dict.form.guestsPlaceholder}</option>
                       {dict.form.guestOptions.map((option) => (
                         <option key={option}>{option}</option>
@@ -256,19 +274,19 @@ export default function Contact({ dict }: Props) {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-700 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                       {dict.form.specialRequests}
                     </label>
                     <textarea
                       rows={3}
                       placeholder={dict.form.specialRequestsPlaceholder}
-                      className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 resize-none"
+                      className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 resize-none"
                     />
                   </div>
 
                   <button
                     onClick={handleSubmit}
-                    className="w-full rounded-full bg-amber-500 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
+                    className="w-full rounded-full bg-amber-500 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
                   >
                     {dict.form.submit}
                   </button>

@@ -28,7 +28,6 @@ export default function Navbar({ dict, locale }: Props) {
     { label: dict.contact, href: `/${locale}#contact` },
   ];
 
-  // Get the path without locale for switching
   const pathWithoutLocale = pathname.replace(/^\/(en|pt)/, "") || "/";
   const otherLocale = locale === "en" ? "pt" : "en";
 
@@ -40,19 +39,31 @@ export default function Navbar({ dict, locale }: Props) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || mobileOpen
           ? "bg-zinc-900/95 backdrop-blur-sm shadow-lg"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 sm:px-6 py-4">
         {/* Logo */}
         <a
           href={`/${locale}`}
-          className="font-serif text-2xl font-bold text-white"
+          className="font-serif text-xl sm:text-2xl font-bold text-white"
         >
           Koya&apos;s
         </a>
@@ -77,7 +88,6 @@ export default function Navbar({ dict, locale }: Props) {
               {dict.reserve}
             </a>
           </li>
-          {/* Language Switcher */}
           <li>
             <a
               href={`/${otherLocale}${pathWithoutLocale}`}
@@ -88,10 +98,10 @@ export default function Navbar({ dict, locale }: Props) {
           </li>
         </ul>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger — 44px minimum touch target */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1.5 p-3 -mr-1"
           aria-label="Toggle menu"
         >
           <span
@@ -112,38 +122,37 @@ export default function Navbar({ dict, locale }: Props) {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — full screen overlay */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? "max-h-96" : "max-h-0"
+          mobileOpen ? "max-h-[80vh]" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col items-center gap-6 bg-zinc-900/95 backdrop-blur-sm px-6 py-8">
+        <ul className="flex flex-col items-center gap-1 bg-zinc-900/95 backdrop-blur-sm px-6 pb-8 pt-4">
           {navLinks.map((link) => (
-            <li key={link.label}>
+            <li key={link.label} className="w-full">
               <a
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm uppercase tracking-wide text-zinc-300 hover:text-amber-400 transition-colors"
+                className="block text-center text-sm uppercase tracking-wide text-zinc-300 hover:text-amber-400 active:text-amber-400 transition-colors py-3.5"
               >
                 {link.label}
               </a>
             </li>
           ))}
-          <li>
+          <li className="w-full mt-3">
             <a
               href={`/${locale}#contact`}
               onClick={() => setMobileOpen(false)}
-              className="rounded-full bg-amber-500 px-6 py-2 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
+              className="block text-center rounded-full bg-amber-500 px-6 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
             >
               {dict.reserve}
             </a>
           </li>
-          {/* Mobile Language Switcher */}
-          <li>
+          <li className="mt-3">
             <a
               href={`/${otherLocale}${pathWithoutLocale}`}
-              className="text-sm uppercase tracking-wide text-zinc-400 hover:text-white transition-colors border border-zinc-600 rounded-full px-4 py-1.5"
+              className="inline-block text-sm uppercase tracking-wide text-zinc-400 hover:text-white transition-colors border border-zinc-600 rounded-full px-5 py-2.5"
             >
               {otherLocale === "en" ? "English" : "Português"}
             </a>
