@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { i18n } from "../../i18n-config";
 import "../globals.css";
 
-const siteUrl = "https://koyas.vercel.app";
+const siteUrl = "https://koya-bistro.vercel.app";
 
 const meta = {
   en: {
