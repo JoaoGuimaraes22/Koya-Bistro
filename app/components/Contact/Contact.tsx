@@ -3,6 +3,14 @@
 import { useState } from "react";
 import FadeIn from "../FadeIn/FadeIn";
 
+// ============================================
+// SETUP: Replace with your Formspree form ID
+// 1. Go to formspree.io → Create free account
+// 2. New Form → copy the form ID (e.g. "xpwzgkba")
+// 3. Paste it below
+// ============================================
+const FORMSPREE_ID = "mykdkndo";
+
 type ContactDict = {
   label: string;
   title: string;
@@ -56,9 +64,34 @@ type Props = {
 
 export default function Contact({ dict }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = () => {
-    setSubmitted(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(false);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -187,7 +220,18 @@ export default function Contact({ dict }: Props) {
                   <h3 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900 mb-5 sm:mb-6">
                     {dict.form.title}
                   </h3>
-                  <div className="space-y-4 sm:space-y-5">
+
+                  {error && (
+                    <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-600">
+                      Something went wrong. Please try again or contact us
+                      directly.
+                    </div>
+                  )}
+
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-4 sm:space-y-5"
+                  >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
@@ -195,6 +239,8 @@ export default function Contact({ dict }: Props) {
                         </label>
                         <input
                           type="text"
+                          name="firstName"
+                          required
                           placeholder={dict.form.firstNamePlaceholder}
                           className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                         />
@@ -205,6 +251,8 @@ export default function Contact({ dict }: Props) {
                         </label>
                         <input
                           type="text"
+                          name="lastName"
+                          required
                           placeholder={dict.form.lastNamePlaceholder}
                           className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                         />
@@ -217,6 +265,8 @@ export default function Contact({ dict }: Props) {
                       </label>
                       <input
                         type="email"
+                        name="email"
+                        required
                         placeholder={dict.form.emailPlaceholder}
                         className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                       />
@@ -229,6 +279,7 @@ export default function Contact({ dict }: Props) {
                         </label>
                         <input
                           type="date"
+                          name="date"
                           className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
                         />
                       </div>
@@ -236,7 +287,10 @@ export default function Contact({ dict }: Props) {
                         <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                           {dict.form.time}
                         </label>
-                        <select className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                        <select
+                          name="time"
+                          className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                        >
                           <option value="">{dict.form.timePlaceholder}</option>
                           <option>9:00</option>
                           <option>10:00</option>
@@ -258,7 +312,10 @@ export default function Contact({ dict }: Props) {
                       <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
                         {dict.form.guests}
                       </label>
-                      <select className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                      <select
+                        name="guests"
+                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                      >
                         <option value="">{dict.form.guestsPlaceholder}</option>
                         {dict.form.guestOptions.map((option) => (
                           <option key={option}>{option}</option>
@@ -272,18 +329,20 @@ export default function Contact({ dict }: Props) {
                       </label>
                       <textarea
                         rows={3}
+                        name="message"
                         placeholder={dict.form.specialRequestsPlaceholder}
                         className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 resize-none"
                       />
                     </div>
 
                     <button
-                      onClick={handleSubmit}
-                      className="w-full rounded-full bg-amber-500 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
+                      type="submit"
+                      disabled={submitting}
+                      className="w-full rounded-full bg-amber-500 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      {dict.form.submit}
+                      {submitting ? "..." : dict.form.submit}
                     </button>
-                  </div>
+                  </form>
                 </>
               )}
             </div>
