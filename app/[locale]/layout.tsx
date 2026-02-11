@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { i18n } from "../../i18n-config";
 import "../globals.css";
 
 const siteUrl = "https://koya-bistro.vercel.app";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 const meta = {
   en: {

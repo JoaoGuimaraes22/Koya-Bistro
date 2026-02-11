@@ -11,7 +11,9 @@
     "title": "Koya's",
     "subtitle": "Todos os dias com comida caseira, petiscos, tostas e deliciosas sobremesas, tudo preparado com muito carinho. Ambiente descontraído e familiar onde todos são bem-vindos.",
     "viewMenu": "Ver Menu",
-    "reserveTable": "Visite-nos"
+    "reserveTable": "Visite-nos",
+    "orderPickup": "Encomendar Takeaway",
+    "orderDelivery": "Encomendar Entrega"
   },
   "about": {
     "label": "A Nossa História",
@@ -330,7 +332,11 @@
         }
       ],
       "bebidas": [
-        { "name": "Café", "description": "Espresso.", "price": "0.90" },
+        {
+          "name": "Café",
+          "description": "Espresso.",
+          "price": "0.90"
+        },
         {
           "name": "Cappuccino",
           "description": "Cappuccino clássico.",
@@ -482,5 +488,9 @@
     "quickLinks": "Links Rápidos",
     "followUs": "Siga-nos",
     "copyright": "Koya's Bistrô. Todos os direitos reservados."
+  },
+  "orderBar": {
+    "pickup": "Takeaway",
+    "delivery": "Entrega"
   }
 }

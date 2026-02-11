@@ -45,3 +45,8 @@ html,
 body {
   overflow-x: hidden;
 }
+
+/* Safe area for iPhone home bar */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

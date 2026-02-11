@@ -7,6 +7,7 @@ import Menu from "../components/Menu/Menu";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import HeroContent from "../components/HeroContent/HeroContent";
+import OrderBar from "../components/OrderBar/OrderBar";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -38,6 +39,9 @@ export default async function Home({ params }: Props) {
       <Menu dict={dict.menu} />
       <Contact dict={dict.contact} />
       <Footer dict={dict.footer} navDict={dict.navbar} locale={locale} />
+
+      {/* Sticky mobile order bar */}
+      <OrderBar dict={dict.orderBar} />
     </main>
   );
 }

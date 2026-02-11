@@ -11,7 +11,9 @@
     "title": "Koya's",
     "subtitle": "Homemade food, tapas, toasts and delicious desserts — all prepared with care. A relaxed, family atmosphere where everyone is welcome.",
     "viewMenu": "View Menu",
-    "reserveTable": "Visit Us"
+    "reserveTable": "Visit Us",
+    "orderPickup": "Order Pickup",
+    "orderDelivery": "Order Delivery"
   },
   "about": {
     "label": "Our Story",
@@ -330,7 +332,11 @@
         }
       ],
       "bebidas": [
-        { "name": "Coffee", "description": "Espresso.", "price": "0.90" },
+        {
+          "name": "Coffee",
+          "description": "Espresso.",
+          "price": "0.90"
+        },
         {
           "name": "Cappuccino",
           "description": "Classic cappuccino.",
@@ -482,5 +488,9 @@
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
     "copyright": "Koya's Bistrô. All rights reserved."
+  },
+  "orderBar": {
+    "pickup": "Pickup",
+    "delivery": "Delivery"
   }
 }

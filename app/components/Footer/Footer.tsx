@@ -20,7 +20,7 @@ type Props = {
 
 export default function Footer({ dict, navDict, locale }: Props) {
   return (
-    <footer className="bg-zinc-900 text-zinc-400 px-5 sm:px-6 py-12 sm:py-16">
+    <footer className="bg-zinc-900 text-zinc-400 px-5 sm:px-6 py-12 sm:py-16 pb-24 md:pb-16">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 mb-10 sm:mb-12">
           {/* Brand */}
