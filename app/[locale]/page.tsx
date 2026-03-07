@@ -24,7 +24,7 @@ export default async function Home({ params }: Props) {
       {/* Hero Section */}
       <section className="relative flex min-h-screen flex-col items-center justify-center text-white text-center px-5 sm:px-6 overflow-hidden">
         <Image
-          src="/img/hero.png"
+          src="/img/hero.jpg"
           alt="Koya's — fresh lemonade on the terrace"
           fill
           priority
@@ -37,7 +37,7 @@ export default async function Home({ params }: Props) {
 
       <About dict={dict.about} />
       <Menu dict={dict.menu} />
-      <Contact dict={dict.contact} />
+      <Contact dict={dict.contact} reservationDict={dict.reservation} />
       <Footer dict={dict.footer} navDict={dict.navbar} locale={locale} />
 
       {/* Sticky mobile order bar */}

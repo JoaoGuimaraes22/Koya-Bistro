@@ -28,7 +28,7 @@ export default function About({ dict }: Props) {
         <FadeIn direction="left">
           <div className="relative aspect-3/2 md:aspect-4/5 rounded-xl sm:rounded-2xl overflow-hidden">
             <Image
-              src="/img/about.png"
+              src="/img/about.jpg"
               alt="Koya's Café Bar Bistrô sign"
               fill
               className="object-cover"

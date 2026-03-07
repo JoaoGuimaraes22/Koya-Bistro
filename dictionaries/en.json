@@ -430,6 +430,22 @@
       ]
     }
   },
+  "reservation": {
+    "title": "Book a Table",
+    "guests": "Number of Guests",
+    "guestOptions": ["1", "2", "3", "4", "5", "6+"],
+    "selectDate": "Select Date",
+    "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "dayNames": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "availableTimes": "Available Times",
+    "timeSlots": ["12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM"],
+    "specialRequests": "Special Requests / Dietary Notes",
+    "specialRequestsPlaceholder": "e.g., Allergies, special occasion...",
+    "submit": "Confirm Reservation",
+    "thankYouTitle": "Reservation Confirmed!",
+    "thankYouMessage": "We look forward to welcoming you. You'll receive a confirmation shortly.",
+    "errorMessage": "Something went wrong. Please try again or call us directly."
+  },
   "contact": {
     "label": "Come Visit Us",
     "title": "Find Us",

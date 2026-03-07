@@ -2,14 +2,7 @@
 
 import { useState } from "react";
 import FadeIn from "../FadeIn/FadeIn";
-
-// ============================================
-// SETUP: Replace with your Formspree form ID
-// 1. Go to formspree.io → Create free account
-// 2. New Form → copy the form ID (e.g. "xpwzgkba")
-// 3. Paste it below
-// ============================================
-const FORMSPREE_ID = "mykdkndo";
+import Reservation, { type ReservationDict } from "../Reservation/Reservation";
 
 type ContactDict = {
   label: string;
@@ -60,295 +53,148 @@ type ContactDict = {
 
 type Props = {
   dict: ContactDict;
+  reservationDict: ReservationDict;
 };
 
-export default function Contact({ dict }: Props) {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError(false);
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        setError(true);
-      }
-    } catch {
-      setError(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+export default function Contact({ dict, reservationDict }: Props) {
+  const [reservationOpen, setReservationOpen] = useState(false);
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-5 sm:px-6 bg-white">
-      <div className="mx-auto max-w-6xl">
-        {/* Section Header */}
-        <FadeIn>
-          <div className="text-center mb-10 sm:mb-16">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-amber-500 mb-3 sm:mb-4">
-              {dict.label}
-            </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-zinc-900">
-              {dict.title}
-            </h2>
-          </div>
-        </FadeIn>
-
-        <div className="grid md:grid-cols-2 gap-10 sm:gap-16">
-          {/* Left Column — Info */}
-          <FadeIn direction="left">
-            <div className="space-y-8 sm:space-y-10">
-              <div>
-                <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
-                  {dict.hours.title}
-                </h3>
-                <div className="space-y-2 text-sm sm:text-base text-zinc-600">
-                  <div className="flex justify-between gap-4">
-                    <span>{dict.hours.weekdays}</span>
-                    <span className="shrink-0">{dict.hours.weekdaysTime}</span>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <span>{dict.hours.saturday}</span>
-                    <span className="shrink-0">{dict.hours.saturdayTime}</span>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <span>{dict.hours.sunday}</span>
-                    <span className="shrink-0">{dict.hours.sundayTime}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
-                  {dict.location.title}
-                </h3>
-                <div className="space-y-1 text-sm sm:text-base text-zinc-600">
-                  <p>{dict.location.line1}</p>
-                  <p>{dict.location.line2}</p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
-                  {dict.details.title}
-                </h3>
-                <div className="space-y-2 text-sm sm:text-base text-zinc-600">
-                  <p className="flex flex-wrap gap-x-2">
-                    <span className="text-zinc-400">
-                      {dict.details.phoneLabel}
-                    </span>
-                    <a
-                      href={`tel:${dict.details.phone.replace(/\s/g, "")}`}
-                      className="hover:text-amber-500 transition-colors"
-                    >
-                      {dict.details.phone}
-                    </a>
-                  </p>
-                  <p className="flex flex-wrap gap-x-2">
-                    <span className="text-zinc-400">
-                      {dict.details.emailLabel}
-                    </span>
-                    <a
-                      href="https://www.instagram.com/koyas_bistro"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-amber-500 transition-colors"
-                    >
-                      {dict.details.email}
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps?q=Mercado+de+Carcavelos,+Praça+Dr.+Manuel+Rebello+de+Andrade,+Carcavelos,+Portugal&output=embed"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Koya's location — Mercado de Carcavelos"
-                />
-              </div>
+    <>
+      <section id="contact" className="py-16 sm:py-24 px-5 sm:px-6 bg-white">
+        <div className="mx-auto max-w-6xl">
+          {/* Section Header */}
+          <FadeIn>
+            <div className="text-center mb-10 sm:mb-16">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-amber-500 mb-3 sm:mb-4">
+                {dict.label}
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-zinc-900">
+                {dict.title}
+              </h2>
             </div>
           </FadeIn>
 
-          {/* Right Column — Form */}
-          <FadeIn direction="right" delay={150}>
-            <div className="bg-zinc-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10">
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center h-full text-center py-12 sm:py-16">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-100 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                    <svg
-                      className="w-7 h-7 sm:w-8 sm:h-8 text-amber-500"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m4.5 12.75 6 6 9-13.5"
-                      />
-                    </svg>
+          <div className="grid md:grid-cols-2 gap-10 sm:gap-16">
+            {/* Left Column — Info */}
+            <FadeIn direction="left">
+              <div className="space-y-8 sm:space-y-10">
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
+                    {dict.hours.title}
+                  </h3>
+                  <div className="space-y-2 text-sm sm:text-base text-zinc-600">
+                    <div className="flex justify-between gap-4">
+                      <span>{dict.hours.weekdays}</span>
+                      <span className="shrink-0">{dict.hours.weekdaysTime}</span>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <span>{dict.hours.saturday}</span>
+                      <span className="shrink-0">{dict.hours.saturdayTime}</span>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <span>{dict.hours.sunday}</span>
+                      <span className="shrink-0">{dict.hours.sundayTime}</span>
+                    </div>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900 mb-2">
-                    {dict.form.thankYouTitle}
-                  </h3>
-                  <p className="text-sm sm:text-base text-zinc-500">
-                    {dict.form.thankYouMessage}
-                  </p>
                 </div>
-              ) : (
-                <>
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900 mb-5 sm:mb-6">
-                    {dict.form.title}
+
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
+                    {dict.location.title}
                   </h3>
+                  <div className="space-y-1 text-sm sm:text-base text-zinc-600">
+                    <p>{dict.location.line1}</p>
+                    <p>{dict.location.line2}</p>
+                  </div>
+                </div>
 
-                  {error && (
-                    <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-600">
-                      Something went wrong. Please try again or contact us
-                      directly.
-                    </div>
-                  )}
-
-                  <form
-                    onSubmit={handleSubmit}
-                    className="space-y-4 sm:space-y-5"
-                  >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                          {dict.form.firstName}
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          required
-                          placeholder={dict.form.firstNamePlaceholder}
-                          className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                          {dict.form.lastName}
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          required
-                          placeholder={dict.form.lastNamePlaceholder}
-                          className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                        {dict.form.email}
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder={dict.form.emailPlaceholder}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                          {dict.form.date}
-                        </label>
-                        <input
-                          type="date"
-                          name="date"
-                          className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                          {dict.form.time}
-                        </label>
-                        <select
-                          name="time"
-                          className="w-full rounded-lg border border-zinc-200 bg-white px-3 sm:px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-                        >
-                          <option value="">{dict.form.timePlaceholder}</option>
-                          <option>9:00</option>
-                          <option>10:00</option>
-                          <option>11:00</option>
-                          <option>12:00</option>
-                          <option>13:00</option>
-                          <option>14:00</option>
-                          <option>18:00</option>
-                          <option>19:00</option>
-                          <option>20:00</option>
-                          <option>21:00</option>
-                          <option>22:00</option>
-                          <option>23:00</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                        {dict.form.guests}
-                      </label>
-                      <select
-                        name="guests"
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-3 sm:mb-4">
+                    {dict.details.title}
+                  </h3>
+                  <div className="space-y-2 text-sm sm:text-base text-zinc-600">
+                    <p className="flex flex-wrap gap-x-2">
+                      <span className="text-zinc-400">
+                        {dict.details.phoneLabel}
+                      </span>
+                      <a
+                        href={`tel:${dict.details.phone.replace(/\s/g, "")}`}
+                        className="hover:text-amber-500 transition-colors"
                       >
-                        <option value="">{dict.form.guestsPlaceholder}</option>
-                        {dict.form.guestOptions.map((option) => (
-                          <option key={option}>{option}</option>
-                        ))}
-                      </select>
-                    </div>
+                        {dict.details.phone}
+                      </a>
+                    </p>
+                    <p className="flex flex-wrap gap-x-2">
+                      <span className="text-zinc-400">
+                        {dict.details.emailLabel}
+                      </span>
+                      <a
+                        href="https://www.instagram.com/koyas_bistro"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-amber-500 transition-colors"
+                      >
+                        {dict.details.email}
+                      </a>
+                    </p>
+                  </div>
+                </div>
 
-                    <div>
-                      <label className="block text-xs sm:text-sm font-medium text-zinc-700 mb-1.5">
-                        {dict.form.specialRequests}
-                      </label>
-                      <textarea
-                        rows={3}
-                        name="message"
-                        placeholder={dict.form.specialRequestsPlaceholder}
-                        className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 resize-none"
-                      />
-                    </div>
+                <div className="aspect-video rounded-xl overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps?q=Mercado+de+Carcavelos,+Praça+Dr.+Manuel+Rebello+de+Andrade,+Carcavelos,+Portugal&output=embed"
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Koya's location — Mercado de Carcavelos"
+                  />
+                </div>
+              </div>
+            </FadeIn>
 
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="w-full rounded-full bg-amber-500 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                    >
-                      {submitting ? "..." : dict.form.submit}
-                    </button>
-                  </form>
-                </>
-              )}
-            </div>
-          </FadeIn>
+            {/* Right Column — Book a Table CTA */}
+            <FadeIn direction="right" delay={150}>
+              <div className="bg-zinc-950 rounded-xl sm:rounded-2xl p-8 sm:p-10 md:p-12 flex flex-col items-center justify-center text-center h-full min-h-[320px]">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-500/15 rounded-full flex items-center justify-center mb-6">
+                  <svg
+                    className="w-7 h-7 sm:w-8 sm:h-8 text-amber-400"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white mb-3">
+                  {reservationDict.title}
+                </h3>
+                <p className="text-sm sm:text-base text-zinc-400 mb-8 max-w-xs">
+                  {reservationDict.specialRequestsPlaceholder}
+                </p>
+                <button
+                  onClick={() => setReservationOpen(true)}
+                  className="rounded-full bg-amber-500 px-8 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
+                >
+                  {reservationDict.title}
+                </button>
+              </div>
+            </FadeIn>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <Reservation
+        dict={reservationDict}
+        open={reservationOpen}
+        onClose={() => setReservationOpen(false)}
+      />
+    </>
   );
 }
