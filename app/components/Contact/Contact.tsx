@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import FadeIn from "../FadeIn/FadeIn";
 import Reservation, { type ReservationDict } from "../Reservation/Reservation";
 
@@ -58,6 +59,13 @@ type Props = {
 
 export default function Contact({ dict, reservationDict }: Props) {
   const [reservationOpen, setReservationOpen] = useState(false);
+
+  // Listen for navbar "open-reservation" custom event
+  useEffect(() => {
+    const handler = () => setReservationOpen(true);
+    window.addEventListener("open-reservation", handler);
+    return () => window.removeEventListener("open-reservation", handler);
+  }, []);
 
   return (
     <>
@@ -160,34 +168,29 @@ export default function Contact({ dict, reservationDict }: Props) {
 
             {/* Right Column — Book a Table CTA */}
             <FadeIn direction="right" delay={150}>
-              <div className="bg-zinc-950 rounded-xl sm:rounded-2xl p-8 sm:p-10 md:p-12 flex flex-col items-center justify-center text-center h-full min-h-80">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-500/15 rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    className="w-7 h-7 sm:w-8 sm:h-8 text-amber-400"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    viewBox="0 0 24 24"
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden h-full min-h-80">
+                <Image
+                  src="/img/reserve.jpg"
+                  alt="Book a table at Koya's"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="relative flex flex-col items-center justify-center text-center h-full p-8 sm:p-10 md:p-12">
+                  <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white mb-3">
+                    {reservationDict.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-zinc-300 mb-8 max-w-xs">
+                    {reservationDict.specialRequestsPlaceholder}
+                  </p>
+                  <button
+                    onClick={() => setReservationOpen(true)}
+                    className="rounded-full bg-amber-500 px-8 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
-                    />
-                  </svg>
+                    {reservationDict.title}
+                  </button>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white mb-3">
-                  {reservationDict.title}
-                </h3>
-                <p className="text-sm sm:text-base text-zinc-400 mb-8 max-w-xs">
-                  {reservationDict.specialRequestsPlaceholder}
-                </p>
-                <button
-                  onClick={() => setReservationOpen(true)}
-                  className="rounded-full bg-amber-500 px-8 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
-                >
-                  {reservationDict.title}
-                </button>
               </div>
             </FadeIn>
           </div>

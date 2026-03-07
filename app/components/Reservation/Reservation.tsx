@@ -59,17 +59,22 @@ export default function Reservation({ dict, open, onClose }: Props) {
   const isCurrentMonth =
     currentMonth === today.getMonth() && currentYear === today.getFullYear();
 
-  // Lock body scroll when modal is open
+  // Lock body scroll when modal is open + Esc to close
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     } else {
       document.body.style.overflow = "";
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
+  }, [open, onClose]);
 
   const prevMonth = () => {
     if (isCurrentMonth) return;
@@ -130,7 +135,7 @@ export default function Reservation({ dict, open, onClose }: Props) {
     <div className="fixed inset-0 z-60 flex items-start justify-center overflow-y-auto bg-zinc-950/95 backdrop-blur-sm">
       <div className="w-full max-w-lg min-h-full flex flex-col">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between px-5 py-4 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800/50">
+        <div className="sticky top-0 z-10 flex items-center justify-between px-5 py-4 border-b border-zinc-800/50">
           <button
             onClick={onClose}
             className="p-2 -ml-2 text-zinc-400 hover:text-white transition-colors"
@@ -351,7 +356,7 @@ export default function Reservation({ dict, open, onClose }: Props) {
             </div>
 
             {/* Sticky Confirm Button */}
-            <div className="sticky bottom-0 px-5 py-4 bg-zinc-950/95 backdrop-blur-sm border-t border-zinc-800/50">
+            <div className="sticky bottom-0 px-5 py-4 border-t border-zinc-800/50">
               <button
                 onClick={handleSubmit}
                 disabled={!selectedDay || !selectedTime || submitting}

@@ -81,12 +81,12 @@ export default function Navbar({ dict, locale }: Props) {
             </li>
           ))}
           <li>
-            <a
-              href={`/${locale}#contact`}
+            <button
+              onClick={() => window.dispatchEvent(new Event("open-reservation"))}
               className="rounded-full bg-amber-500 px-5 py-2 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
             >
               {dict.reserve}
-            </a>
+            </button>
           </li>
           <li>
             <a
@@ -141,13 +141,15 @@ export default function Navbar({ dict, locale }: Props) {
             </li>
           ))}
           <li className="w-full mt-3">
-            <a
-              href={`/${locale}#contact`}
-              onClick={() => setMobileOpen(false)}
-              className="block text-center rounded-full bg-amber-500 px-6 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                window.dispatchEvent(new Event("open-reservation"));
+              }}
+              className="block w-full text-center rounded-full bg-amber-500 px-6 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
             >
               {dict.reserve}
-            </a>
+            </button>
           </li>
           <li className="mt-3">
             <a
