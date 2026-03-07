@@ -86,11 +86,15 @@ export default function Contact({ dict, reservationDict }: Props) {
                   <div className="space-y-2 text-sm sm:text-base text-zinc-600">
                     <div className="flex justify-between gap-4">
                       <span>{dict.hours.weekdays}</span>
-                      <span className="shrink-0">{dict.hours.weekdaysTime}</span>
+                      <span className="shrink-0">
+                        {dict.hours.weekdaysTime}
+                      </span>
                     </div>
                     <div className="flex justify-between gap-4">
                       <span>{dict.hours.saturday}</span>
-                      <span className="shrink-0">{dict.hours.saturdayTime}</span>
+                      <span className="shrink-0">
+                        {dict.hours.saturdayTime}
+                      </span>
                     </div>
                     <div className="flex justify-between gap-4">
                       <span>{dict.hours.sunday}</span>
@@ -156,7 +160,7 @@ export default function Contact({ dict, reservationDict }: Props) {
 
             {/* Right Column — Book a Table CTA */}
             <FadeIn direction="right" delay={150}>
-              <div className="bg-zinc-950 rounded-xl sm:rounded-2xl p-8 sm:p-10 md:p-12 flex flex-col items-center justify-center text-center h-full min-h-[320px]">
+              <div className="bg-zinc-950 rounded-xl sm:rounded-2xl p-8 sm:p-10 md:p-12 flex flex-col items-center justify-center text-center h-full min-h-80">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-amber-500/15 rounded-full flex items-center justify-center mb-6">
                   <svg
                     className="w-7 h-7 sm:w-8 sm:h-8 text-amber-400"

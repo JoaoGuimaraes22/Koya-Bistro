@@ -127,7 +127,7 @@ export default function Reservation({ dict, open, onClose }: Props) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-zinc-950/95 backdrop-blur-sm">
+    <div className="fixed inset-0 z-60 flex items-start justify-center overflow-y-auto bg-zinc-950/95 backdrop-blur-sm">
       <div className="w-full max-w-lg min-h-full flex flex-col">
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between px-5 py-4 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800/50">
@@ -136,8 +136,18 @@ export default function Reservation({ dict, open, onClose }: Props) {
             className="p-2 -ml-2 text-zinc-400 hover:text-white transition-colors"
             aria-label="Close"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
             </svg>
           </button>
           <h2 className="text-lg font-bold font-serif text-white">
@@ -189,7 +199,7 @@ export default function Reservation({ dict, open, onClose }: Props) {
                       <button
                         key={option}
                         onClick={() => setSelectedGuests(option)}
-                        className={`min-w-[3.25rem] rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
+                        className={`min-w-13 rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
                           selectedGuests === option
                             ? "border-white bg-white text-zinc-900"
                             : "border-zinc-700 text-zinc-300 hover:border-zinc-500"
@@ -215,8 +225,18 @@ export default function Reservation({ dict, open, onClose }: Props) {
                         className="p-1 text-zinc-400 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                         aria-label="Previous month"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 19.5 8.25 12l7.5-7.5"
+                          />
                         </svg>
                       </button>
                       <span className="text-sm font-medium text-white">
@@ -227,8 +247,18 @@ export default function Reservation({ dict, open, onClose }: Props) {
                         className="p-1 text-zinc-400 hover:text-white transition-colors"
                         aria-label="Next month"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                          />
                         </svg>
                       </button>
                     </div>
@@ -252,8 +282,7 @@ export default function Reservation({ dict, open, onClose }: Props) {
                       ))}
                       {Array.from({ length: daysInMonth }).map((_, i) => {
                         const day = i + 1;
-                        const isPast =
-                          isCurrentMonth && day < today.getDate();
+                        const isPast = isCurrentMonth && day < today.getDate();
                         const isSelected = selectedDay === day;
 
                         return (
