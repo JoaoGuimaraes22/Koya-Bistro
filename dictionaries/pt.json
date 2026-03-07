@@ -13,7 +13,8 @@
     "viewMenu": "Ver Menu",
     "reserveTable": "Visite-nos",
     "orderPickup": "Encomendar Takeaway",
-    "orderDelivery": "Encomendar Entrega"
+    "orderDelivery": "Encomendar Entrega",
+    "reserve": "Reservar Mesa"
   },
   "about": {
     "label": "A Nossa História",
@@ -432,6 +433,8 @@
   },
   "reservation": {
     "title": "Reservar Mesa",
+    "name": "O Seu Nome",
+    "namePlaceholder": "O seu nome",
     "guests": "Numero de Pessoas",
     "guestOptions": ["1", "2", "3", "4", "5", "6+"],
     "selectDate": "Selecionar Data",
@@ -444,6 +447,7 @@
     "submit": "Confirmar Reserva",
     "thankYouTitle": "Reserva Confirmada!",
     "thankYouMessage": "Esperamos recebe-lo em breve. Recebera uma confirmacao em breve.",
+    "newReservation": "Nova Reserva",
     "errorMessage": "Algo correu mal. Tente novamente ou ligue-nos diretamente."
   },
   "contact": {

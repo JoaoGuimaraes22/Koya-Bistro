@@ -6,6 +6,8 @@ const FORMSPREE_ID = "mykdkndo";
 
 export type ReservationDict = {
   title: string;
+  name: string;
+  namePlaceholder: string;
   guests: string;
   guestOptions: string[];
   selectDate: string;
@@ -18,6 +20,7 @@ export type ReservationDict = {
   submit: string;
   thankYouTitle: string;
   thankYouMessage: string;
+  newReservation: string;
   errorMessage: string;
 };
 
@@ -37,6 +40,7 @@ function getFirstDayOfWeek(year: number, month: number) {
 
 export default function Reservation({ dict, open, onClose }: Props) {
   const today = new Date();
+  const [name, setName] = useState("");
   const [selectedGuests, setSelectedGuests] = useState("2");
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
@@ -106,6 +110,7 @@ export default function Reservation({ dict, open, onClose }: Props) {
 
     const data = new FormData();
     data.append("_subject", "New Reservation");
+    data.append("name", name);
     data.append("guests", selectedGuests);
     data.append("date", dateStr);
     data.append("time", selectedTime);
@@ -183,10 +188,17 @@ export default function Reservation({ dict, open, onClose }: Props) {
             </h3>
             <p className="text-zinc-400 mb-8">{dict.thankYouMessage}</p>
             <button
-              onClick={onClose}
-              className="rounded-full border border-zinc-700 px-8 py-3 text-sm font-medium text-zinc-300 hover:border-zinc-500 hover:text-white transition-colors"
+              onClick={() => {
+                setSubmitted(false);
+                setName("");
+                setSelectedGuests("2");
+                setSelectedDay(null);
+                setSelectedTime(null);
+                setSpecialRequests("");
+              }}
+              className="rounded-full bg-amber-500 px-8 py-3 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 transition-colors"
             >
-              Close
+              {dict.newReservation}
             </button>
           </div>
         ) : (
@@ -194,12 +206,26 @@ export default function Reservation({ dict, open, onClose }: Props) {
             {/* Body */}
             <div className="flex-1 px-5 py-6">
               <div className="rounded-2xl border border-zinc-800 p-6 sm:p-8 space-y-8">
+                {/* Name */}
+                <div>
+                  <h3 className="text-base font-semibold text-white mb-3">
+                    {dict.name}
+                  </h3>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder={dict.namePlaceholder}
+                    className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-zinc-500 focus:outline-none"
+                  />
+                </div>
+
                 {/* Number of Guests */}
                 <div>
                   <h3 className="text-base font-semibold text-white mb-4">
                     {dict.guests}
                   </h3>
-                  <div className="flex gap-2 flex-wrap">
+                  <div className="flex gap-2 flex-wrap justify-center sm:justify-start">
                     {dict.guestOptions.map((option) => (
                       <button
                         key={option}

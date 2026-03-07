@@ -13,7 +13,8 @@
     "viewMenu": "View Menu",
     "reserveTable": "Visit Us",
     "orderPickup": "Order Pickup",
-    "orderDelivery": "Order Delivery"
+    "orderDelivery": "Order Delivery",
+    "reserve": "Book a Table"
   },
   "about": {
     "label": "Our Story",
@@ -432,6 +433,8 @@
   },
   "reservation": {
     "title": "Book a Table",
+    "name": "Your Name",
+    "namePlaceholder": "Your name",
     "guests": "Number of Guests",
     "guestOptions": ["1", "2", "3", "4", "5", "6+"],
     "selectDate": "Select Date",
@@ -444,6 +447,7 @@
     "submit": "Confirm Reservation",
     "thankYouTitle": "Reservation Confirmed!",
     "thankYouMessage": "We look forward to welcoming you. You'll receive a confirmation shortly.",
+    "newReservation": "New Reservation",
     "errorMessage": "Something went wrong. Please try again or call us directly."
   },
   "contact": {
