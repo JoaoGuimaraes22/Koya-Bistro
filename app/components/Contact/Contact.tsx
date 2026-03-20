@@ -176,14 +176,7 @@ export default function Contact({ dict, reservationDict }: Props) {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-black/30" />
                 <div className="relative flex flex-col items-center justify-center text-center h-full p-8 sm:p-10 md:p-12">
-                  <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white mb-3">
-                    {reservationDict.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-zinc-300 mb-8 max-w-xs">
-                    {reservationDict.specialRequestsPlaceholder}
-                  </p>
                   <button
                     onClick={() => setReservationOpen(true)}
                     className="rounded-full bg-amber-500 px-8 py-3.5 text-sm font-semibold text-zinc-900 uppercase tracking-wide hover:bg-amber-400 active:bg-amber-600 transition-colors"
